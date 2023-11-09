@@ -1,0 +1,42 @@
+
+.header{
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+
+    &__navbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        
+        &__link{
+            padding: 5px;
+            cursor: pointer;
+        }
+    }
+
+
+    &__logo{
+        padding: 10px;
+        img{
+            width: 30%;
+        }
+    }
+
+    &__register{
+        border: 1px solid;
+        padding: 8px 13px;
+        cursor: pointer;
+        transition: 500ms;
+
+        &:hover{
+            background-color: white;
+            color: black;
+            transition: 500ms;
+        }
+    }
+}
