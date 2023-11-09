@@ -24,6 +24,8 @@
         }
 
         &__bar {
+            cursor: pointer;
+
             @media screen and (min-width : 760px) {
                 display: none;
             }
@@ -32,6 +34,7 @@
                 display: block;
                 width: 30px;
             }
+        
         }
     }
 
@@ -50,7 +53,7 @@
     &__register {
 
         & p {
-            border: 1px solid;
+            border: .5px solid;
             padding: 8px 13px;
             cursor: pointer;
             flex-basis: 1;
