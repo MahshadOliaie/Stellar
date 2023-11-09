@@ -23,25 +23,56 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -ms-flex-preferred-size: 1;
+      flex-basis: 1;
 }
 .header__navbar__link {
   padding: 5px;
   cursor: pointer;
 }
+@media screen and (max-width: 760px) {
+  .header__navbar__link {
+    display: none;
+  }
+}
+@media screen and (min-width: 760px) {
+  .header__navbar__bar {
+    display: none;
+  }
+}
+@media screen and (max-width: 760px) {
+  .header__navbar__bar {
+    display: block;
+    width: 30px;
+  }
+}
 .header__logo {
+  -ms-flex-preferred-size: 1;
+      flex-basis: 1;
   padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .header__logo img {
-  width: 30%;
+  width: 25%;
 }
-.header__register {
+.header__register p {
   border: 1px solid;
   padding: 8px 13px;
   cursor: pointer;
+  -ms-flex-preferred-size: 1;
+      flex-basis: 1;
   -webkit-transition: 500ms;
   transition: 500ms;
 }
-.header__register:hover {
+.header__register p:hover {
   background-color: white;
   color: black;
   -webkit-transition: 500ms;
@@ -62,4 +93,7 @@ a {
 @font-face {
   font-family: iranSanse;
   src: url(../fonts/IRANSansWeb_Light.ttf);
+}
+.dnone {
+  display: none;
 }/*# sourceMappingURL=main.min.css.map */
