@@ -1,0 +1,43 @@
+.categories {
+    width: 100%;
+    padding: 20px 6%;
+    display: grid;
+    row-gap: 20px;
+}
+
+.category {
+    width: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 18vh;
+    display: flex;
+    align-items: center;
+    padding: 0 12%;
+
+    &__title {
+        border: .7px solid;
+        padding: 15px 20px;
+    }
+}
+
+
+
+#unisex {
+    background-image: url(../images/unisex.jpeg);
+}
+#women{
+    background-image: url(../images/women.jpeg);
+    color: white;
+}
+#men{
+    background-image: url(../images/men.jpeg);
+    justify-content: flex-end;
+}
+#bags{
+    background-image: url(../images/bag.jpeg);
+}
+#accessory{
+    background-image: url(../images/accessory.jpeg);
+    justify-content: flex-end;
+    color: white;
+}

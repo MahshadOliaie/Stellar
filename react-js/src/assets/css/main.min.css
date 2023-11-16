@@ -1,6 +1,9 @@
 .header {
-  background-color: black;
-  color: white;
+  background-color: transparent;
+  color: black;
+  position: fixed;
+  width: 100%;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,7 +13,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0 30px;
+  padding: 0 6%;
 }
 .header__navbar {
   display: -webkit-box;
@@ -40,6 +43,7 @@
 }
 .header__navbar__bar {
   cursor: pointer;
+  fill: black;
 }
 @media screen and (min-width: 760px) {
   .header__navbar__bar {
@@ -49,7 +53,7 @@
 @media screen and (max-width: 760px) {
   .header__navbar__bar {
     display: block;
-    width: 30px;
+    font-size: 30px;
   }
 }
 .header__logo {
@@ -68,7 +72,7 @@
 }
 .header__register p {
   border: 0.5px solid;
-  padding: 8px 13px;
+  padding: 2px 13px;
   cursor: pointer;
   -ms-flex-preferred-size: 1;
       flex-basis: 1;
@@ -99,4 +103,95 @@ a {
 }
 .dnone {
   display: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.slider {
+  width: 100%;
+  background-image: url(../images/slider.jpg);
+  background-size: 120%;
+  background-position-y: -40px;
+  background-repeat: no-repeat;
+  height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 15%;
+  margin-bottom: 20px;
+}
+.slider__text {
+  text-align: center;
+  margin-top: 30px;
+}
+.slider__text__welcome {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.slider__text__shop {
+  background-color: #A9A9A7;
+  border: none;
+  padding: 10px;
+}
+
+.categories {
+  width: 100%;
+  padding: 20px 6%;
+  display: grid;
+  row-gap: 20px;
+}
+
+.category {
+  width: 100%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 18vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 12%;
+}
+.category__title {
+  border: 0.7px solid;
+  padding: 15px 20px;
+}
+
+#unisex {
+  background-image: url(../images/unisex.jpeg);
+}
+
+#women {
+  background-image: url(../images/women.jpeg);
+  color: white;
+}
+
+#men {
+  background-image: url(../images/men.jpeg);
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#bags {
+  background-image: url(../images/bag.jpeg);
+}
+
+#accessory {
+  background-image: url(../images/accessory.jpeg);
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  color: white;
 }/*# sourceMappingURL=main.min.css.map */

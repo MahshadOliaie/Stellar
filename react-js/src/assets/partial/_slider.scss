@@ -1,0 +1,33 @@
+
+
+.slider{
+    width: 100%;
+    background-image: url(../images/slider.jpg);
+    background-size: 120%;
+    background-position-y: -40px;
+    background-repeat: no-repeat;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 15%;
+    margin-bottom: 20px;
+
+    &__text{
+        text-align: center;
+        margin-top: 30px;
+
+
+        &__welcome{
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        &__shop{
+            background-color: #A9A9A7;
+            border: none;
+            padding: 10px;
+        }
+    }
+
+}
