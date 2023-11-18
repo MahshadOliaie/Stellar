@@ -96,8 +96,9 @@
   }
 }
 .header__register p:hover {
-  background-color: white;
-  color: black;
+  background-color: rgba(0, 0, 0, 0.663);
+  color: white;
+  border-color: black;
   -webkit-transition: 500ms;
   transition: 500ms;
 }
@@ -223,6 +224,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 12%;
+  overflow: hidden;
 }
 @media screen and (min-width: 700px) {
   .category {
@@ -234,7 +236,7 @@ a {
 }
 @media screen and (min-width: 1100px) {
   .category {
-    height: 35vh;
+    height: 40vh;
   }
 }
 .category__title {
@@ -243,14 +245,14 @@ a {
 }
 @media screen and (min-width: 700px) {
   .category__title {
-    font-size: 20px;
     padding: 20px 35px;
     background-color: rgba(255, 255, 255, 0.095);
   }
 }
 @media screen and (min-width: 1100px) {
   .category__title {
-    padding: 25px 40px;
+    font-size: 20px;
+    padding: 20px 40px;
   }
 }
 
@@ -267,7 +269,7 @@ a {
   #unisex {
     width: 153%;
     margin-left: 52%;
-    height: 50vh;
+    height: 55vh;
   }
 }
 
@@ -285,7 +287,7 @@ a {
 @media screen and (min-width: 1100px) {
   #women {
     width: 153%;
-    height: 50vh;
+    height: 55vh;
   }
 }
 
