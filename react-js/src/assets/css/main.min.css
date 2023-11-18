@@ -91,8 +91,8 @@
 }
 @media screen and (min-width: 700px) {
   .header__register p {
-    font-size: 20px;
-    padding: 2px 15px;
+    font-size: 18px;
+    padding: 5px 18px;
   }
 }
 .header__register p:hover {
@@ -152,6 +152,13 @@ a {
     padding-right: 20%;
   }
 }
+@media screen and (min-width: 1000px) {
+  .slider {
+    height: 550px;
+    background-size: 100% 120%;
+    background-position-y: -100px;
+  }
+}
 .slider__text {
   text-align: center;
   margin-top: 30px;
@@ -182,6 +189,7 @@ a {
   padding: 20px 6%;
   display: grid;
   row-gap: 20px;
+  overflow: hidden;
 }
 @media screen and (min-width: 700px) {
   .categories {
@@ -192,6 +200,14 @@ a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .categories {
+    grid-template-columns: repeat(3, 30%);
+    -webkit-column-gap: 20px;
+       -moz-column-gap: 20px;
+            column-gap: 20px;
   }
 }
 
@@ -216,15 +232,25 @@ a {
             justify-content: center;
   }
 }
+@media screen and (min-width: 1100px) {
+  .category {
+    height: 35vh;
+  }
+}
 .category__title {
   border: 0.7px solid;
   padding: 10px 20px;
 }
 @media screen and (min-width: 700px) {
   .category__title {
-    font-size: 22px;
-    padding: 15px 25px;
+    font-size: 20px;
+    padding: 20px 35px;
     background-color: rgba(255, 255, 255, 0.095);
+  }
+}
+@media screen and (min-width: 1100px) {
+  .category__title {
+    padding: 25px 40px;
   }
 }
 
@@ -235,6 +261,13 @@ a {
   #unisex {
     background-position-x: 100%;
     grid-column-start: 2;
+  }
+}
+@media screen and (min-width: 1100px) {
+  #unisex {
+    width: 153%;
+    margin-left: 52%;
+    height: 50vh;
   }
 }
 
@@ -249,6 +282,12 @@ a {
     grid-row-start: 1;
   }
 }
+@media screen and (min-width: 1100px) {
+  #women {
+    width: 153%;
+    height: 50vh;
+  }
+}
 
 #men {
   background-image: url(../images/men.jpeg);
@@ -261,6 +300,11 @@ a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+}
+@media screen and (min-width: 1100px) {
+  #men {
+    grid-column-start: 1;
   }
 }
 
@@ -284,5 +328,13 @@ a {
   #accessory {
     grid-column-start: 1;
     grid-column-end: 3;
+  }
+}
+@media screen and (min-width: 1100px) {
+  #accessory {
+    grid-column-start: 3;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }/*# sourceMappingURL=main.min.css.map */

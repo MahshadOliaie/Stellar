@@ -3,13 +3,20 @@
     padding: 20px 6%;
     display: grid;
     row-gap: 20px;
+    overflow: hidden;
 
     @media screen and (min-width : 700px) {
-        grid-template-columns: repeat(2 , 49%);
+        grid-template-columns: repeat(2, 49%);
         column-gap: 2.5%;
         justify-content: center;
     }
+
+    @media screen and (min-width : 1100px) {
+        grid-template-columns: repeat(3, 30%);
+        column-gap: 20px;
+    }
 }
+
 
 .category {
     width: 100%;
@@ -25,14 +32,22 @@
         justify-content: center;
     }
 
+    @media screen and (min-width : 1100px) {
+        height: 35vh;
+    }
+
     &__title {
         border: .7px solid;
         padding: 10px 20px;
 
         @media screen and (min-width : 700px) {
-            font-size: 22px;
-            padding: 15px 25px;
+            font-size: 20px;
+            padding: 20px 35px;
             background-color: rgba(255, 255, 255, 0.095);
+        }
+
+        @media screen and (min-width : 1100px) {
+            padding: 25px 40px;
         }
     }
 }
@@ -41,12 +56,20 @@
 
 #unisex {
     background-image: url(../images/unisex.jpeg);
+
     @media screen and (min-width : 700px) {
         background-position-x: 100%;
         grid-column-start: 2;
     }
+
+    @media screen and (min-width : 1100px) {
+        width: 153%;
+        margin-left: 52%;
+        height: 50vh;
+    }
 }
-#women{
+
+#women {
     background-image: url(../images/women.jpeg);
     color: white;
 
@@ -55,8 +78,14 @@
         grid-column-start: 1;
         grid-row-start: 1;
     }
+
+    @media screen and (min-width : 1100px) {
+        width: 153%;
+        height: 50vh;
+    }
 }
-#men{
+
+#men {
     background-image: url(../images/men.jpeg);
     justify-content: flex-end;
 
@@ -64,15 +93,21 @@
         justify-content: center;
     }
 
+    @media screen and (min-width : 1100px) {
+        grid-column-start: 1;
+    }
+
 }
-#bags{
+
+#bags {
     background-image: url(../images/bag.jpeg);
 
     @media screen and (min-width : 700px) {
         background-position-x: 100%;
     }
 }
-#accessory{
+
+#accessory {
     background-image: url(../images/accessory.jpeg);
     justify-content: flex-end;
     color: white;
@@ -80,5 +115,10 @@
     @media screen and (min-width : 700px) {
         grid-column-start: 1;
         grid-column-end: 3;
+    }
+
+    @media screen and (min-width : 1100px) {
+        grid-column-start: 3;
+        justify-content: center;
     }
 }

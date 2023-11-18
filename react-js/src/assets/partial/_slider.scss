@@ -19,6 +19,12 @@
         padding-right: 20%;
     }
 
+    @media screen and (min-width : 1000px) {
+        height: 550px;
+        background-size: 100% 120%; 
+        background-position-y: -100px;
+    }
+
     &__text{
         text-align: center;
         margin-top: 30px;
