@@ -13,7 +13,7 @@
     padding-right: 15%;
     margin-bottom: 20px;
 
-    @media screen and (min-width : 768px) {
+    @media screen and (min-width : 700px) {
         height: 400px;
         background-position-y: -80px;
         padding-right: 20%;
@@ -26,10 +26,10 @@
 
         &__welcome{
             font-size: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             line-height: 1.2;
 
-            @media screen and (min-width : 768px) {
+            @media screen and (min-width : 700px) {
                 font-size: 35px;
             }
         
@@ -40,8 +40,8 @@
             border: none;
             padding: 10px;
 
-            @media screen and (min-width : 768px) {
-                font-size: 20px;
+            @media screen and (min-width : 700px) {
+                font-size: 18px;
             }
         }
     }
