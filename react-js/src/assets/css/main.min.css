@@ -14,6 +14,8 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0 6%;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 .header__navbar {
   display: -webkit-box;
@@ -86,8 +88,6 @@
   cursor: pointer;
   -ms-flex-preferred-size: 1;
       flex-basis: 1;
-  -webkit-transition: 500ms;
-  transition: 500ms;
 }
 @media screen and (min-width: 700px) {
   .header__register p {
@@ -99,8 +99,20 @@
   background-color: rgba(0, 0, 0, 0.663);
   color: white;
   border-color: black;
+}
+
+.scroll {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.871);
   -webkit-transition: 500ms;
   transition: 500ms;
+}
+.scroll .header__register p:hover {
+  background-color: rgba(255, 255, 255, 0.885);
+  color: black;
+}
+.scroll .header__navbar__bar {
+  fill: white;
 }
 
 body {

@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 6%;
+    transition: 500ms;
 
     &__navbar {
         display: flex;
@@ -70,7 +71,6 @@
             padding: 2px 13px;
             cursor: pointer;
             flex-basis: 1;
-            transition: 500ms;
             @media screen and (min-width : 700px) {
                 font-size: 18px;
                 padding: 5px 18px;
@@ -80,9 +80,28 @@
                 background-color: rgba(0, 0, 0, 0.663);
                 color: white;
                 border-color: black;
-                transition: 500ms;
             }
         }
 
     }
+}
+
+
+
+.scroll{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.871);
+    transition: 500ms;
+
+    & .header__register p{
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.885);
+            color: black;
+        }
+    }
+
+    & .header__navbar__bar{
+        fill: white;
+    }
+
 }
