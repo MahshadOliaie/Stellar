@@ -36,7 +36,7 @@
   padding: 5px;
   cursor: pointer;
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 800px) {
   .header__navbar__link {
     display: none;
   }
@@ -45,12 +45,12 @@
   cursor: pointer;
   fill: black;
 }
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 800px) {
   .header__navbar__bar {
     display: none;
   }
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 800px) {
   .header__navbar__bar {
     display: block;
     font-size: 30px;
@@ -113,10 +113,10 @@ a {
 .slider {
   width: 100%;
   background-image: url(../images/slider.jpg);
-  background-size: 120%;
+  background-size: 120% 120%;
   background-position-y: -40px;
   background-repeat: no-repeat;
-  height: 30vh;
+  height: 250px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -129,6 +129,13 @@ a {
   padding-right: 15%;
   margin-bottom: 20px;
 }
+@media screen and (min-width: 768px) {
+  .slider {
+    height: 400px;
+    background-position-y: -80px;
+    padding-right: 20%;
+  }
+}
 .slider__text {
   text-align: center;
   margin-top: 30px;
@@ -136,11 +143,22 @@ a {
 .slider__text__welcome {
   font-size: 20px;
   margin-bottom: 10px;
+  line-height: 1.2;
+}
+@media screen and (min-width: 768px) {
+  .slider__text__welcome {
+    font-size: 35px;
+  }
 }
 .slider__text__shop {
   background-color: #A9A9A7;
   border: none;
   padding: 10px;
+}
+@media screen and (min-width: 768px) {
+  .slider__text__shop {
+    font-size: 20px;
+  }
 }
 
 .categories {
@@ -152,7 +170,7 @@ a {
 
 .category {
   width: 100%;
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   height: 18vh;
   display: -webkit-box;

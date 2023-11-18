@@ -21,7 +21,7 @@
             padding: 5px;
             cursor: pointer;
 
-            @media screen and (max-width : 760px) {
+            @media screen and (max-width : 800px) {
                 display: none;
             }
         }
@@ -30,11 +30,11 @@
             cursor: pointer;
             fill: black;
 
-            @media screen and (min-width : 760px) {
+            @media screen and (min-width : 800px) {
                 display: none;
             }
 
-            @media screen and (max-width : 760px) {
+            @media screen and (max-width : 800px) {
                 display: block;
                 font-size: 30px;
             }

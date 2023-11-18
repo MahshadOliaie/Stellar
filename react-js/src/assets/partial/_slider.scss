@@ -3,15 +3,21 @@
 .slider{
     width: 100%;
     background-image: url(../images/slider.jpg);
-    background-size: 120%;
+    background-size: 120% 120%;
     background-position-y: -40px;
     background-repeat: no-repeat;
-    height: 30vh;
+    height: 250px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding-right: 15%;
     margin-bottom: 20px;
+
+    @media screen and (min-width : 768px) {
+        height: 400px;
+        background-position-y: -80px;
+        padding-right: 20%;
+    }
 
     &__text{
         text-align: center;
@@ -21,12 +27,22 @@
         &__welcome{
             font-size: 20px;
             margin-bottom: 10px;
+            line-height: 1.2;
+
+            @media screen and (min-width : 768px) {
+                font-size: 35px;
+            }
+        
         }
 
         &__shop{
             background-color: #A9A9A7;
             border: none;
             padding: 10px;
+
+            @media screen and (min-width : 768px) {
+                font-size: 20px;
+            }
         }
     }
 
