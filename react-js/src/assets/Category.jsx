@@ -4,7 +4,10 @@ function Category(Props) {
     return (
 
         <div className="category" id={Props.id}>
-            <p className="category__title">{Props.title}</p>
+            <div className="category__inside" id={Props.insideId}>
+                <p className="category__inside__title">{Props.title}</p>
+            </div>
+
         </div>
 
     )

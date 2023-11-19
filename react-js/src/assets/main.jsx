@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 
 function stickyHeader(){
-  if(window.scrollY>100){
+  if(window.scrollY>95){
     document.querySelector(".header").classList.add("scroll")
     document.querySelector(".header__logo img").setAttribute("src" , "./src/assets/images/WhiteLogo.png")
   }else{

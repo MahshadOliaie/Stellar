@@ -21,35 +21,57 @@
 
 .category {
     width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
     height: 18vh;
-    display: flex;
-    align-items: center;
-    padding: 0 12%;
     overflow: hidden;
+    cursor: pointer;
 
     @media screen and (min-width : 700px) {
         height: 25vh;
-        justify-content: center;
     }
 
     @media screen and (min-width : 1100px) {
         height: 40vh;
     }
 
-    &__title {
-        border: .7px solid;
-        padding: 10px 20px;
+
+    &__inside{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 0 12%;
+        transition: 400ms;
 
         @media screen and (min-width : 700px) {
-            padding: 20px 35px;
-            background-color: rgba(255, 255, 255, 0.095);
+            justify-content: center;
         }
 
-        @media screen and (min-width : 1100px) {
-            font-size: 20px;
-            padding: 20px 40px;
+        &__title {
+            border: .7px solid;
+            padding: 10px 20px;
+            transition: 400ms;
+    
+            @media screen and (min-width : 700px) {
+                padding: 20px 35px;
+                background-color: rgba(255, 255, 255, 0.095);
+            }
+    
+            @media screen and (min-width : 1100px) {
+                font-size: 20px;
+                padding: 20px 40px;
+            }
+        }
+
+        &:hover{
+            transform: scale(1.06);
+            transition: 400ms;
+
+            & p{
+                transform: scale(.94);
+                transition: 400ms;
+            }
         }
     }
 
@@ -58,10 +80,7 @@
 
 
 #unisex {
-    background-image: url(../images/unisex.jpeg);
-
     @media screen and (min-width : 700px) {
-        background-position-x: 100%;
         grid-column-start: 2;
     }
 
@@ -73,11 +92,9 @@
 }
 
 #women {
-    background-image: url(../images/women.jpeg);
     color: white;
 
     @media screen and (min-width : 700px) {
-        background-position-x: 100%;
         grid-column-start: 1;
         grid-row-start: 1;
     }
@@ -89,12 +106,6 @@
 }
 
 #men {
-    background-image: url(../images/men.jpeg);
-    justify-content: flex-end;
-
-    @media screen and (min-width : 700px) {
-        justify-content: center;
-    }
 
     @media screen and (min-width : 1100px) {
         grid-column-start: 1;
@@ -102,17 +113,7 @@
 
 }
 
-#bags {
-    background-image: url(../images/bag.jpeg);
-
-    @media screen and (min-width : 700px) {
-        background-position-x: 100%;
-    }
-}
-
 #accessory {
-    background-image: url(../images/accessory.jpeg);
-    justify-content: flex-end;
     color: white;
 
     @media screen and (min-width : 700px) {
@@ -122,6 +123,49 @@
 
     @media screen and (min-width : 1100px) {
         grid-column-start: 3;
+    }
+}
+
+
+#unisexIn {
+    background-image: url(../images/unisex.jpeg);
+
+    @media screen and (min-width : 700px) {
+        background-position-x: 100%;
+    }
+}
+
+#womenIn {
+    background-image: url(../images/women.jpeg);
+
+    @media screen and (min-width : 700px) {
+        background-position-x: 100%;
+    }
+}
+
+#menIn {
+    justify-content: flex-end;
+    background-image: url(../images/men.jpeg);
+
+    @media screen and (min-width : 700px) {
+        justify-content: center;
+    }
+
+}
+
+#bagsIn {
+    background-image: url(../images/bag.jpeg);
+
+    @media screen and (min-width : 700px) {
+        background-position-x: 100%;
+    }
+}
+
+#accessoryIn {
+    background-image: url(../images/accessory.jpeg);
+    justify-content: flex-end;
+
+    @media screen and (min-width : 1100px) {
         justify-content: center;
     }
 }

@@ -9,11 +9,11 @@ function App() {
     <MyHeader />
     <MySlider />
     <div className="categories">
-      <Category id="unisex" title="UNISEX"/>
-      <Category id="women" title="WOMEN"/>
-      <Category id="men" title="MEN"/>
-      <Category id="bags" title="BAGS"/>
-      <Category id="accessory" title="ACCESSORY"/>
+      <Category id="unisex" insideId="unisexIn" title="UNISEX"/>
+      <Category id="women" insideId="womenIn" title="WOMEN"/>
+      <Category id="men" insideId="menIn" title="MEN"/>
+      <Category id="bags" insideId="bagsIn" title="BAGS"/>
+      <Category id="accessory" insideId="accessoryIn" title="ACCESSORY"/>
     </div>
     </>
   )

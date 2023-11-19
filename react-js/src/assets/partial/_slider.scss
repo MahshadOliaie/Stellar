@@ -45,9 +45,17 @@
             background-color: #A9A9A7;
             border: none;
             padding: 10px;
+            transition: 300ms;
 
             @media screen and (min-width : 700px) {
                 font-size: 18px;
+            }
+
+
+            &:hover{
+                background-color: #929292;
+                transform: scale(1.01);
+                transition: 300ms;
             }
         }
     }
