@@ -3,6 +3,8 @@ import MyHeader from "./MyHeader";
 import MyHomePage from "./MyHomePage";
 import Title from "./Title";
 import Category from "./category";
+import Product from "./Product";
+import CategoryPage from "./CategoryPage";
 
 
 function App() {
@@ -10,13 +12,7 @@ function App() {
     <>
       <MyHeader />
       {/* <MyHomePage /> */}
-      <Title title="UNISEX" />
-      <div className="categories">
-        <Category id="jacket" insideId="jacketIn" title="JACKET" />
-        <Category id="hoodies" insideId="hoodiesIn" title="HOODIES" />
-        <Category id="tshirt" insideId="tshirtIn" title="T-SHIRT" />
-      </div>
-      <Title title="ALL" />
+      <CategoryPage />
     </>
   )
 

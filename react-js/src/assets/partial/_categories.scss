@@ -42,7 +42,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         padding: 0 12%;
-        transition: 400ms;
+        transition: 500ms;
 
         @media screen and (min-width : 700px) {
             justify-content: center;
@@ -51,7 +51,7 @@
         &__title {
             border: .7px solid;
             padding: 10px 20px;
-            transition: 400ms;
+            transition: 500ms;
     
             @media screen and (min-width : 700px) {
                 padding: 20px 35px;
@@ -66,11 +66,11 @@
 
         &:hover{
             transform: scale(1.06);
-            transition: 400ms;
+            transition: 500ms;
 
             & p{
                 transform: scale(.94);
-                transition: 400ms;
+                transition: 500ms;
             }
         }
     }

@@ -267,8 +267,8 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0 12%;
-  -webkit-transition: 400ms;
-  transition: 400ms;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 @media screen and (min-width: 700px) {
   .category__inside {
@@ -280,8 +280,8 @@ a {
 .category__inside__title {
   border: 0.7px solid;
   padding: 10px 20px;
-  -webkit-transition: 400ms;
-  transition: 400ms;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 @media screen and (min-width: 700px) {
   .category__inside__title {
@@ -298,14 +298,14 @@ a {
 .category__inside:hover {
   -webkit-transform: scale(1.06);
           transform: scale(1.06);
-  -webkit-transition: 400ms;
-  transition: 400ms;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 .category__inside:hover p {
   -webkit-transform: scale(0.94);
           transform: scale(0.94);
-  -webkit-transition: 400ms;
-  transition: 400ms;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 
 @media screen and (min-width: 700px) {
@@ -497,4 +497,71 @@ a {
 .seperator__title {
   background-color: white;
   padding: 0 10px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  padding: 2% 6%;
+  row-gap: 30px;
+}
+@media screen and (min-width: 700px) {
+  .products {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+@media screen and (min-width: 1000px) {
+  .products {
+    grid-template-columns: repeat(3, 33%);
+  }
+}
+
+.card {
+  width: 80%;
+  margin: auto;
+  cursor: pointer;
+  overflow: hidden;
+}
+.card:hover img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+.card__image {
+  width: 100%;
+  overflow: hidden;
+}
+.card__image img {
+  width: 100%;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+.card__about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 10px;
+}
+.card__about__text p {
+  margin: 5px;
+}
+.card__about__like svg {
+  font-size: 25px;
+  cursor: pointer;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+.card__about__like svg:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 300ms;
+  transition: 300ms;
 }/*# sourceMappingURL=main.min.css.map */
