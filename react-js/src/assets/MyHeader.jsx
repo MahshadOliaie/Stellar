@@ -2,7 +2,7 @@
 
 function MyHeader() {
     return (
-        <header className="header">
+        <header className="header sticky scroll">
             <div className="header__register"><p>login</p></div>
             <div className="header__logo"><img src="./src/assets/images/StellarLogo.png" alt="logo" /></div>
             <div className="header__navbar">

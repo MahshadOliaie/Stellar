@@ -1,22 +1,25 @@
+import HomePage from "./MyHomePage";
 import MyHeader from "./MyHeader";
-import MySlider from "./MySlider";
+import MyHomePage from "./MyHomePage";
+import Title from "./Title";
 import Category from "./category";
 
 
 function App() {
   return (
     <>
-    <MyHeader />
-    <MySlider />
-    <div className="categories">
-      <Category id="unisex" insideId="unisexIn" title="UNISEX"/>
-      <Category id="women" insideId="womenIn" title="WOMEN"/>
-      <Category id="men" insideId="menIn" title="MEN"/>
-      <Category id="bags" insideId="bagsIn" title="BAGS"/>
-      <Category id="accessory" insideId="accessoryIn" title="ACCESSORY"/>
-    </div>
+      <MyHeader />
+      {/* <MyHomePage /> */}
+      <Title title="UNISEX" />
+      <div className="categories">
+        <Category id="jacket" insideId="jacketIn" title="JACKET" />
+        <Category id="hoodies" insideId="hoodiesIn" title="HOODIES" />
+        <Category id="tshirt" insideId="tshirtIn" title="T-SHIRT" />
+      </div>
+      <Title title="ALL" />
     </>
   )
+
 }
 
 export default App;

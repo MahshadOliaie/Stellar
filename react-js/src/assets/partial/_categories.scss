@@ -126,6 +126,37 @@
     }
 }
 
+#tshirt{
+    @media screen and (min-width : 700px) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-top: -5px;
+    }
+
+    @media screen and (min-width : 1100px) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+}
+
+#jacket{
+    @media screen and (min-width : 1100px) {
+        grid-column-start: 1;
+        width: 153%;
+        height: 55vh;
+        width: 153%;
+    }
+}
+
+#hoodies{
+    @media screen and (min-width : 1100px) {
+        grid-column-start: 2;
+        width: 153%;
+        margin-left: 52%;
+        height: 55vh;
+    }
+}
+
 
 #unisexIn {
     background-image: url(../images/unisex.jpeg);
@@ -168,4 +199,28 @@
     @media screen and (min-width : 1100px) {
         justify-content: center;
     }
+}
+
+
+#jacketIn{
+    background-image: url(../images/jacket.jpeg);
+    justify-content: flex-end;
+
+    @media screen and (min-width : 700px) {
+        justify-content: center;
+    }
+}
+
+
+#hoodiesIn{
+    background-image: url(../images/hoodies.jpeg);
+
+    @media screen and (min-width : 700px) {
+        background-position-x: 100%;
+    }
+}
+
+#tshirtIn{
+    background-image: url(../images/tshirt.jpeg);
+    justify-content: flex-end;
 }

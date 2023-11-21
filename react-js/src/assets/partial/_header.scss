@@ -58,6 +58,7 @@
 
         & img{
             width: 25%;
+            cursor: pointer;
 
             @media screen and (min-width : 700px) {
                 width: 35%;
@@ -87,6 +88,10 @@
     }
 }
 
+
+.sticky{
+    position: sticky;
+}
 
 
 .scroll{
