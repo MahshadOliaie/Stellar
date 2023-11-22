@@ -1,13 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
 import MyHeader from './MyHeader'
+import MyHomePage from './MyHomePage'
+import CategoryPage from './CategoryPage'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+
+function renderHomePage(){
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+      <MyHomePage />
+    </React.StrictMode>,
+  )
+}
+
 
 
 
@@ -22,3 +27,6 @@ function stickyHeader(){
 }
 
 window.addEventListener("scroll", stickyHeader);
+
+
+renderHomePage();

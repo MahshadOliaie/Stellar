@@ -1,8 +1,8 @@
 
 
-function MyHeader() {
+function MyHeader(Props) {
     return (
-        <header className="header sticky">
+        <header className={Props.headerState}>
             <div className="header__register"><p>login</p></div>
             <div className="header__logo"><img src="./src/assets/images/StellarLogo.png" alt="logo" /></div>
             <div className="header__navbar">

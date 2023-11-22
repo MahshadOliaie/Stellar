@@ -1,9 +1,11 @@
 import MySlider from "./MySlider";
 import Category from "./category";
+import MyHeader from "./MyHeader";
 
 function MyHomePage() {
     return (
         <>
+            <MyHeader headerState="header" />
             <MySlider />
             <div className="categories">
                 <Category id="unisex" insideId="unisexIn" title="UNISEX" />

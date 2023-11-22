@@ -1,10 +1,12 @@
 import Title from "./Title";
 import Category from "./category";
 import Product from "./Product";
+import MyHeader from "./MyHeader";
 
 function CategoryPage() {
     return (
         <>
+            <MyHeader headerState="header sticky" />
             <Title title="UNISEX" />
             <div className="categories">
                 <Category id="jacket" insideId="jacketIn" title="JACKET" />
