@@ -1,0 +1,116 @@
+.photos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__main {
+        padding: 6%;
+        position: relative;
+
+        & img {
+            width: 100%;
+        }
+
+        &__dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            bottom: 0;
+
+            &__dot {
+                width: 13px;
+                height: 13px;
+                margin: 0 7px;
+                border-radius: 50%;
+                border: 1.5px solid #616161;
+            }
+
+
+        }
+    }
+
+    &__picker {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 15px 30px;
+        background-color: rgb(217, 217, 217, 37%);
+        box-shadow: inset 1px 1px 1rem rgb(201, 201, 201);
+
+        & img {
+            width: 60px;
+            height: 90px;
+            opacity: .7;
+        }
+    }
+
+
+
+}
+
+#p2 {
+    opacity: 1;
+    border-bottom: 4px solid #616161;
+}
+
+#dot2{
+    background-color: #616161;
+}
+
+
+
+
+
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 13%;
+
+    &__title{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: .5px solid rgb(0, 0, 0, 32%);
+        width: 100%;
+
+        &__name{
+            margin: 0;
+            font-size: larger;
+        }
+
+        &__price{
+            margin-top: 10px;
+        }
+    }
+
+    &__colorPicker{
+        display: flex;
+        align-items: center;
+        padding: 6%;
+
+        &__color{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgb(84, 84, 223);
+            margin: 0 7px;
+        }
+    }
+
+}
+
+
+#color2{
+    background-color: black;
+}
+#color3{
+    background-color: #98D4FF;
+    outline-offset: 2px;
+    outline: 2px solid black;
+}
+#color4{
+    background-color: #872D8F;
+}

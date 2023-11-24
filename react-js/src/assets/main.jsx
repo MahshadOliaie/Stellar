@@ -3,16 +3,25 @@ import ReactDOM from 'react-dom/client'
 import MyHeader from './MyHeader'
 import MyHomePage from './MyHomePage'
 import CategoryPage from './CategoryPage'
+import ProductPage from './ProductPage'
+
+
 
 
 function renderHomePage(){
+  topFunction()
   ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-      <MyHomePage />
+      <ProductPage />
     </React.StrictMode>,
   )
 }
 
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 
 
 
