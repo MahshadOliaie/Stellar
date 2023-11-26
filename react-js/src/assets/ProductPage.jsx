@@ -1,8 +1,9 @@
-
+import MyHeader from "./MyHeader";
 
 function ProductPage() {
     return (
         <>
+             <MyHeader headerState="header sticky" />
             <div className="photos">
                 <div className="photos__main">
                     <img src="/src/assets/images/jacketProduct.jpg" alt="" />
