@@ -567,6 +567,22 @@ a {
   transition: 300ms;
 }
 
+@media screen and (min-width: 1100px) {
+  .containerProduct {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 20px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 2%;
+  }
+}
+
 .photos {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -578,6 +594,9 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 @media screen and (min-width: 700px) {
   .photos {
@@ -593,6 +612,12 @@ a {
 }
 .photos__main img {
   width: 100%;
+  max-height: 800px;
+}
+@media screen and (min-width: 1100px) {
+  .photos__main {
+    padding: 0 6%;
+  }
 }
 .photos__main__dots {
   display: -webkit-box;
@@ -612,6 +637,11 @@ a {
     bottom: 40px;
   }
 }
+@media screen and (min-width: 1100px) {
+  .photos__main__dots {
+    bottom: 0;
+  }
+}
 .photos__main__dots__dot {
   width: 13px;
   height: 13px;
@@ -626,11 +656,12 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   gap: 20px;
   width: 100%;
+  overflow: scroll;
   padding: 15px 30px;
   background-color: rgba(217, 217, 217, 0.37);
   -webkit-box-shadow: inset 1px 1px 1rem rgb(201, 201, 201);
@@ -699,6 +730,16 @@ a {
     padding-top: 5%;
   }
 }
+@media screen and (min-width: 1100px) {
+  .about {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .about {
+    width: 30%;
+  }
+}
 .about__title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -712,6 +753,13 @@ a {
           align-items: center;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.32);
   width: 100%;
+}
+@media screen and (min-width: 1100px) {
+  .about__title {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
 }
 .about__title__name {
   margin: 0;
