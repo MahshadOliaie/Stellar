@@ -1,9 +1,12 @@
+import ProductPage from "./ProductPage";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 
 
 
 function Product(){
     return(
-        <div className="card">
+        <div className="card" onClick={renderProductPage}>
             <div className="card__image">
                 <img src="/src/assets/images/jacketProduct.jpg" alt="" />
             </div>
@@ -21,3 +24,19 @@ function Product(){
 }
 
 export default Product;
+
+
+
+function renderProductPage() {
+    topFunction();
+    ReactDOM.createRoot(document.getElementById('root')).render(
+        <React.StrictMode>
+            <ProductPage />
+        </React.StrictMode>,
+    )
+}
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}

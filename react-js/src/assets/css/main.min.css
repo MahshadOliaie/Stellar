@@ -686,7 +686,6 @@ a {
 .photos__picker img {
   width: 60px;
   height: 90px;
-  opacity: 0.7;
 }
 @media screen and (min-width: 700px) {
   .photos__picker img {
@@ -694,21 +693,24 @@ a {
     height: 95px;
   }
 }
+.photos__picker img:not(.currentPhoto) {
+  opacity: 0.7;
+}
 
-#p2 {
+.currentPhoto {
   opacity: 1;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   border-bottom: 4px solid #616161;
 }
 @media screen and (min-width: 700px) {
-  #p2 {
+  .currentPhoto {
     border: none;
     border-left: 4px solid #616161;
   }
 }
 
-#dot2 {
+.currentDot {
   background-color: #616161;
 }
 

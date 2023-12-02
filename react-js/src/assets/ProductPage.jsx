@@ -7,23 +7,23 @@ function ProductPage() {
             <div className="containerProduct">
                 <div className="photos">
                     <div className="photos__main">
-                        <img src="/src/assets/images/jacketProduct.jpg" alt="" />
+                        <img src="/src/assets/images/jacket1.jpg" alt="" />
 
                         <div className="photos__main__dots">
-                            <div className="photos__main__dots__dot" id="dot1"></div>
-                            <div className="photos__main__dots__dot" id="dot2"></div>
-                            <div className="photos__main__dots__dot" id="dot3"></div>
-                            <div className="photos__main__dots__dot" id="dot4"></div>
-                            <div className="photos__main__dots__dot" id="dot5"></div>
+                            <div className="photos__main__dots__dot currentDot" id="dotp1"></div>
+                            <div className="photos__main__dots__dot" id="dotp2"></div>
+                            <div className="photos__main__dots__dot" id="dotp3"></div>
+                            <div className="photos__main__dots__dot" id="dotp4"></div>
+                            <div className="photos__main__dots__dot" id="dotp5"></div>
                         </div>
                     </div>
 
                     <div className="photos__picker">
-                        <img src="/src/assets/images/jacket1.jpg" id="p1" alt="" className="photos__picker__image" />
-                        <img src="/src/assets/images/jacketProduct.jpg" id="p2" alt="" className="photos__picker__image" />
-                        <img src="/src/assets/images/jacket2.jpg" id="p3" alt="" className="photos__picker__image" />
-                        <img src="/src/assets/images/jacket2.jpg" id="p4" alt="" className="photos__picker__image" />
-                        <img src="/src/assets/images/jacket2.jpg" id="p5" alt="" className="photos__picker__image" />
+                        <img src="/src/assets/images/jacket1.jpg" id="p1" alt="" className="photos__picker__image currentPhoto" onClick={() => showPhoto("/src/assets/images/jacket1.jpg")} />
+                        <img src="/src/assets/images/jacketProduct.jpg" id="p2" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/assets/images/jacketProduct.jpg")} />
+                        <img src="/src/assets/images/jacket2.jpg" id="p3" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/assets/images/jacket2.jpg")} />
+                        <img src="/src/assets/images/jacket2.jpg" id="p4" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/assets/images/jacket2.jpg")} />
+                        <img src="/src/assets/images/jacket2.jpg" id="p5" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/assets/images/jacket2.jpg")} />
                     </div>
                 </div>
 
@@ -78,3 +78,17 @@ function ProductPage() {
 }
 
 export default ProductPage;
+
+
+
+function showPhoto(src) {
+    document.querySelector(".photos__main img").setAttribute("src", src);
+    document.querySelector(".currentPhoto").classList.remove("currentPhoto")
+    event.target.classList.add("currentPhoto")
+    checkPhoto(event.target.getAttribute("id"))
+}
+
+function checkPhoto(id) {
+    document.querySelector(".currentDot").classList.remove("currentDot")
+    document.getElementById(`dot${id}`).classList.add("currentDot")
+}

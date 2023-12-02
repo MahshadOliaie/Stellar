@@ -12,7 +12,6 @@ function Category(Props) {
             <div className="category__inside" id={Props.insideId}>
                 <p className="category__inside__title">{Props.title}</p>
             </div>
-
         </div>
 
     )

@@ -91,11 +91,14 @@
         & img {
             width: 60px;
             height: 90px;
-            opacity: .7;
 
             @media screen and (min-width : 700px) {
                 width: 70px;
                 height: 95px;
+            }
+
+            &:not(.currentPhoto) {
+                opacity: .7;
             }
 
         }
@@ -105,7 +108,9 @@
 
 }
 
-#p2 {
+
+
+.currentPhoto {
     opacity: 1;
     box-sizing: content-box;
     border-bottom: 4px solid #616161;
@@ -114,14 +119,12 @@
         border: none;
         border-left: 4px solid #616161;
     }
-
 }
 
-#dot2 {
+
+.currentDot {
     background-color: #616161;
 }
-
-
 
 
 

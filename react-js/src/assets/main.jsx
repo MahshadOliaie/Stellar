@@ -12,7 +12,7 @@ function renderHomePage(){
   topFunction()
   ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-      <ProductPage />
+      <MyHomePage />
     </React.StrictMode>,
   )
 }
