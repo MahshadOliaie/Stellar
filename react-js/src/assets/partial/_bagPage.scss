@@ -1,13 +1,12 @@
-
-.bag{
+.bag {
     display: grid;
     grid-template-columns: 1fr;
 
     @media screen and (min-width : 950px) {
-        grid-template-columns: repeat(2 , 50%);
+        grid-template-columns: repeat(2, 50%);
     }
 
-    &__product{
+    &__product {
         width: 85%;
         margin: auto;
         display: flex;
@@ -15,23 +14,23 @@
         border-bottom: 1.5px solid;
         padding: 20px 0;
 
-        &__image{
-            width: 40%;
+        &__image {
+            width: 45%;
             max-height: 400px;
             max-width: 300px;
             margin-right: 20px;
 
-            & img{
+            & img {
                 width: 100%;
             }
 
         }
 
-        &__about{
+        &__about {
             width: 65%;
             position: relative;
 
-            &__color{
+            &__color {
                 width: 20px;
                 height: 20px;
                 background-color: #98D4FF;
@@ -41,16 +40,46 @@
     }
 }
 
-.bagQty{
-    width: 40px;
+.bagQty {
+    width: 50px;
     display: flex;
     justify-content: center;
+
+
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+.controlQty {
+    display: flex;
+    gap: 5px;
     position: absolute;
     right: 0;
     bottom: 0;
     margin-bottom: 1rem;
 
-    &:focus-visible{
-        outline: none;
+    &__operation {
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & svg{
+            width: 12px;
+            height: 12px;
+            fill: white;
+            background-color: #595959;
+            padding: 1px;
+            box-sizing: content-box;
+            cursor: pointer;
+            transition: 200ms;
+
+            &:hover{
+                background-color: black;
+                transition: 200ms;
+            }
+        }
     }
+
 }
