@@ -320,9 +320,22 @@
     padding: 0 20px;
     box-sizing: content-box;
     margin-top: 25px;
+    cursor: pointer;
+    transition: 400ms;
+
+    &:hover{
+        background-color: #9a9a9a;
+        transition: 400ms;
+
+        & p{
+            margin-right: 25px;
+            transition: 500ms;
+        }
+    }
 
     & p {
         margin: 10px;
+        transition: 500ms;
 
         @media screen and (min-width : 700px) {
             font-size: 20px;

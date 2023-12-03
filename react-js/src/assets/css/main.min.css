@@ -969,9 +969,24 @@ a {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   margin-top: 25px;
+  cursor: pointer;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+}
+.addBtn:hover {
+  background-color: #9a9a9a;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+}
+.addBtn:hover p {
+  margin-right: 25px;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 .addBtn p {
   margin: 10px;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 @media screen and (min-width: 700px) {
   .addBtn p {
