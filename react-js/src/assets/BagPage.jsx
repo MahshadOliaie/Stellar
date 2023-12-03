@@ -7,11 +7,11 @@ function BagPage(){
         <>
         <MyHeader headerState="header sticky"/>
         <div className="bag">
-            <BagProduct/>
-            <BagProduct/>
-            <BagProduct/>
-            <BagProduct/>
-            <BagProduct/>
+            <BagProduct id="b1"/>
+            <BagProduct id="b2"/>
+            <BagProduct id="b3"/>
+            <BagProduct id="b4"/>
+            <BagProduct id="b5"/>
         </div>
         </>
 
