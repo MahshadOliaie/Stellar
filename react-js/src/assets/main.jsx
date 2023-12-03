@@ -13,7 +13,7 @@ function renderHomePage(){
   topFunction()
   ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-      <BagPage />
+      <MyHomePage />
     </React.StrictMode>,
   )
 }

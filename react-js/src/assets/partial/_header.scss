@@ -22,10 +22,34 @@
         &__link {
             padding: 5px;
             cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
 
+            &::before{
+                content: "";
+                height: 1px;
+                width: 90%;
+                background-color: black;
+                position: absolute;
+                bottom: 5px;
+                transform: translate(-110%);
+                transition: 500ms;
+            }
+            &:hover::before{
+                transform: translate(0);
+                transition: 500ms;
+            }
+
+    
             @media screen and (max-width : 1000px) {
                 display: none;
             }
+
+        
+
         }
 
         &__bar {
@@ -108,6 +132,10 @@
 
     & .header__navbar__bar{
         fill: white;
+    }
+
+    & .header__navbar__link::before{
+        background-color: white;
     }
 
 }

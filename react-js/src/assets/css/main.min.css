@@ -38,6 +38,35 @@
 .header__navbar__link {
   padding: 5px;
   cursor: pointer;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+.header__navbar__link::before {
+  content: "";
+  height: 1px;
+  width: 90%;
+  background-color: black;
+  position: absolute;
+  bottom: 5px;
+  -webkit-transform: translate(-110%);
+          transform: translate(-110%);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+.header__navbar__link:hover::before {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 @media screen and (max-width: 1000px) {
   .header__navbar__link {
@@ -119,6 +148,9 @@
 }
 .scroll .header__navbar__bar {
   fill: white;
+}
+.scroll .header__navbar__link::before {
+  background-color: white;
 }
 
 body {
