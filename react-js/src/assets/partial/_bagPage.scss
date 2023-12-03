@@ -1,0 +1,56 @@
+
+.bag{
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width : 950px) {
+        grid-template-columns: repeat(2 , 50%);
+    }
+
+    &__product{
+        width: 85%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        border-bottom: 1.5px solid;
+        padding: 20px 0;
+
+        &__image{
+            width: 40%;
+            max-height: 400px;
+            max-width: 300px;
+            margin-right: 20px;
+
+            & img{
+                width: 100%;
+            }
+
+        }
+
+        &__about{
+            width: 65%;
+            position: relative;
+
+            &__color{
+                width: 20px;
+                height: 20px;
+                background-color: #98D4FF;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.bagQty{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 1rem;
+
+    &:focus-visible{
+        outline: none;
+    }
+}

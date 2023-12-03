@@ -4,6 +4,7 @@ import MyHeader from './MyHeader'
 import MyHomePage from './MyHomePage'
 import CategoryPage from './CategoryPage'
 import ProductPage from './ProductPage'
+import BagPage from './BagPage'
 
 
 
@@ -12,7 +13,7 @@ function renderHomePage(){
   topFunction()
   ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-      <MyHomePage />
+      <BagPage />
     </React.StrictMode>,
   )
 }
