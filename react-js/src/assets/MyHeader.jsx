@@ -10,7 +10,7 @@ function MyHeader(Props) {
             <div className="header__register"><p>login</p></div>
             <div className="header__logo" onClick={renderHomePage}><img src="./src/assets/images/StellarLogo.png" alt="logo" /></div>
             <div className="header__navbar">
-                <p className="header__navbar__link">home</p>
+                <p className="header__navbar__link" onClick={renderHomePage}>home</p>
                 <p className="header__navbar__link">products</p>
                 <p className="header__navbar__link">favorite</p>
                 <p className="header__navbar__link" onClick={renderBagPage}>bag</p>
