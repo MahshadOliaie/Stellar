@@ -1,12 +1,12 @@
-import BagProduct from "./BagProduct";
-import MyHeader from "./MyHeader";
+import BagProduct from "../components/BagProduct";
+import MyHeader from "../components/MyHeader";
 
 
 function BagPage(){
     return(
         <>
         <MyHeader headerState="header sticky"/>
-        <div className="bag">
+        <div className="bag">   
             <BagProduct id="b1"/>
             <BagProduct id="b2"/>
             <BagProduct id="b3"/>

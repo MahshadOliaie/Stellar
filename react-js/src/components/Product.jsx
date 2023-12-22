@@ -1,16 +1,22 @@
-import ProductPage from "./ProductPage";
+import ProductPage from "../pages/ProductPage";
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { useNavigate } from "react-router-dom";
 
 export let liked = []
 
 
 
+
 function Product(Props) {
+
+
+    const Navigate=useNavigate()
+
     return (
         <div className="card" >
-            <div className="card__image" onClick={renderProductPage}>
-                <img src="/src/assets/images/jacketProduct.jpg" alt="" />
+            <div className="card__image" onClick={()=>Navigate(`/product/${props.product.id}`)}>
+                <img src="/src/images/jacketProduct.jpg" alt="" />
             </div>
             <div className="card__about">
                 <div className="card__about__text">
@@ -29,19 +35,19 @@ export default Product;
 
 
 
-function renderProductPage() {
-    topFunction();
-    ReactDOM.createRoot(document.getElementById('root')).render(
-        <React.StrictMode>
-            <ProductPage />
-        </React.StrictMode>,
-    )
-}
+// function renderProductPage() {
+//     topFunction();
+//     ReactDOM.createRoot(document.getElementById('root')).render(
+//         <React.StrictMode>
+//             <ProductPage />
+//         </React.StrictMode>,
+//     )
+// }
 
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
+// function topFunction() {
+//     document.body.scrollTop = 0;
+//     document.documentElement.scrollTop = 0;
+// }
 
 
 function likeFn(id) {

@@ -1,4 +1,4 @@
-import MyHeader from "./MyHeader";
+import MyHeader from "../components/MyHeader";
 
 function ProductPage() {
     return (
@@ -7,7 +7,7 @@ function ProductPage() {
             <div className="containerProduct">
                 <div className="photos">
                     <div className="photos__main">
-                        <img src="/src/assets/images/jacket1.jpg" alt="" />
+                        <img src="/src/images/jacket1.jpg" alt="" />
 
                         <div className="photos__main__dots">
                             <div className="photos__main__dots__dot currentDot" id="dotp1"></div>
@@ -19,11 +19,11 @@ function ProductPage() {
                     </div>
 
                     <div className="photos__picker">
-                        <img src="/src/assets/images/jacket1.jpg" id="p1" alt="" className="photos__picker__image currentPhoto" onClick={() => showPhoto("/src/assets/images/jacket1.jpg")} />
-                        <img src="/src/assets/images/jacketProduct.jpg" id="p2" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/assets/images/jacketProduct.jpg")} />
-                        <img src="/src/assets/images/jacket2.jpg" id="p3" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/assets/images/jacket2.jpg")} />
-                        <img src="/src/assets/images/jacket2.jpg" id="p4" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/assets/images/jacket2.jpg")} />
-                        <img src="/src/assets/images/jacket2.jpg" id="p5" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/assets/images/jacket2.jpg")} />
+                        <img src="/src/images/jacket1.jpg" id="p1" alt="" className="photos__picker__image currentPhoto" onClick={() => showPhoto("/src/images/jacket1.jpg")} />
+                        <img src="/src/images/jacketProduct.jpg" id="p2" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/images/jacketProduct.jpg")} />
+                        <img src="/src/images/jacket2.jpg" id="p3" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/images/jacket2.jpg")} />
+                        <img src="/src/images/jacket2.jpg" id="p4" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/images/jacket2.jpg")} />
+                        <img src="/src/images/jacket2.jpg" id="p5" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/images/jacket2.jpg")} />
                     </div>
                 </div>
 
