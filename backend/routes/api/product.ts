@@ -32,7 +32,9 @@ productRouter.post('/getbytags',async(req,res)=>{
         // .having(':tag_count=SUM(cast(productTag.tag in (:...specific_tags_list) as int))',{tag_count:body.tags.length,specific_tags_list:body.tags})
 
         const result=await query.getMany()
-        console.log(result)
+       
+        
+
         return res.json({err:false,data:{result}})
         
 
@@ -46,5 +48,34 @@ productRouter.post('/getbytags',async(req,res)=>{
         res.json({err:true,message:'INTERNAL ERROR'})
         
     }
+})
+productRouter.get('/getproduct/:id',async(req,res)=>{
+    try {
+        const productId=(+req.params.id)||null
+        console.log(productId)
+        if(productId!==null){
+            const product=await prodctRepo.findOne({
+                relations:['colorsNSizes','images','colorsNSizes.color'],
+                where:{
+                    id:productId
+        
+                }
+            })
+            
+            return res.json({err:false,message:'محصول مورد نظر پیدا شد',data:product})
+            
+        }
+        return res.json({err:true,message:'محصول مورد نظر پیدا نشد'})
+        
+        
+    } catch (error) {
+        return res.json({err:true,message:'محصول مورد نظر پیدا نشد'})
+        
+        
+    }
+
+
+    
+    
 })
 export default productRouter
