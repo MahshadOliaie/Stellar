@@ -643,6 +643,7 @@ path {
   }
 }
 .photos__main {
+  
   padding: 6%;
   position: relative;
 }
@@ -656,6 +657,7 @@ path {
   }
 }
 .photos__main__dots {
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
