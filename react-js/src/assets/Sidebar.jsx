@@ -58,7 +58,7 @@ function renderFavoritePage(){
     topFunction();
     ReactDOM.createRoot(document.getElementById('root')).render(
         <React.StrictMode>
-           <FavoritePage/>
+           <FavoritePage />
         </React.StrictMode>,
     )
 }

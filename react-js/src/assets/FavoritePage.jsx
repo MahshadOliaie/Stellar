@@ -1,14 +1,15 @@
 import MyHeader from "./MyHeader";
-import Product from "./Product";
+import Product, { liked } from "./Product";
 
 
 
 function FavoritePage() {
+    console.log(liked)
     return (
         <>
             <MyHeader headerState="header sticky" />
             <div className="favoriteContainer">
-                <FavoriteItems />
+                {<FavoriteItems />}
             </div>
 
         </>
@@ -19,12 +20,13 @@ export default FavoritePage;
 
 
 function FavoriteItems() {
+    let items = []
+    for(let i=0 ; i<liked.length ; i++){
+        items.push(<Product isLiked="true" id={i} />)
+    }
     return (
         <>
-            <Product isLiked="true" />
-            <Product isLiked="true" />
-            <Product isLiked="true" />
-            <Product isLiked="true" />
+           {items}
         </>
     )
 }

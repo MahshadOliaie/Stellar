@@ -15,11 +15,11 @@ function CategoryPage() {
             </div>
             <Title title="ALL" />
             <div className="products">
-                <Product />
-                <Product />
-                <Product />
-                <Product />
-                <Product />
+                <Product id="1"/>
+                <Product id="2"/>
+                <Product id="3"/>
+                <Product id="4"/>
+                <Product id="5"/>
             </div>
         </>
     )
