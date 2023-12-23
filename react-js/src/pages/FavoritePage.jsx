@@ -1,5 +1,5 @@
-import MyHeader from "./MyHeader";
-import Product, { liked } from "./Product";
+import MyHeader from "../components/MyHeader";
+import Product, { liked } from "../components/Product";
 
 
 

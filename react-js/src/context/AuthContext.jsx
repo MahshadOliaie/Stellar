@@ -20,7 +20,6 @@ const AuthProvider=(props)=>{
     const location=useLocation()
     topFunction()
     function topFunction() {
-        console.log('hello')
         window.scrollTo(0, 0)
       }
       useEffect(()=>{

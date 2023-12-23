@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import MyHomePage from "../pages/MyHomePage";
-import FavoritePage from "./FavoritePage";
+import FavoritePage from "../pages/FavoritePage";
 import { useNavigate } from "react-router-dom";
 
 
@@ -16,7 +16,7 @@ function Sidebar() {
             <p className="sidebar__item" onClick={()=>navigate('/')}>HOME</p>
             <p className="sidebar__item">PRODUCTS</p>
 
-            <p className="sidebar__item" onClick={renderFavoritePage}>FAVORITE</p>
+            <p className="sidebar__item" onClick={()=>navigate('/favorite')}>FAVORITE</p>
             <p className="sidebar__item" onClick={()=>navigate('/mybag')}>BAG</p>
 
         </div>

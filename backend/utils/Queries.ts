@@ -19,7 +19,9 @@ export const selectProdcutsByTagsQ=(tags)=>{
     .from(Product,'product')
     .select('product')
     .where('product.id in ('+subQuery.getQuery()+')')
+
     .setParameters(subQuery.getParameters())
+    
 
 
     return mainQuery

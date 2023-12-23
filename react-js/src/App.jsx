@@ -17,6 +17,7 @@ import {
 
 import { AuthProvider } from './context/AuthContext';
 import Clothes from './pages/Clothes'
+import FavoritePage from './pages/FavoritePage'
 
 const App=()=>{
 
@@ -63,6 +64,12 @@ const App=()=>{
                     <Route path='/mybag'  element={
                         <Suspense>
                             <BagPage/>
+
+                        </Suspense>
+                    }/>
+                    <Route path='/favorite'  element={
+                        <Suspense>
+                            <FavoritePage/>
 
                         </Suspense>
                     }/>
