@@ -20,6 +20,7 @@ import Clothes from './pages/Clothes'
 import FavoritePage from './pages/FavoritePage'
 import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
+import CodeSubmitPage from './pages/CodeSubmitPage'
 
 const App = () => {
 
@@ -86,6 +87,13 @@ const App = () => {
                     <Route path='/signUp' element={
                         <Suspense>
                             <SignupPage />
+
+                        </Suspense>
+                    } />
+
+                    <Route path='/codePage' element={
+                        <Suspense>
+                            <CodeSubmitPage />
 
                         </Suspense>
                     } />

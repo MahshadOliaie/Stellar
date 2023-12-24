@@ -1263,4 +1263,9 @@ path {
 .form__change:hover {
   opacity: 1;
   border-bottom: 0.6px solid;
+}
+
+#codeInput {
+  text-align: center;
+  width: 65%;
 }/*# sourceMappingURL=main.min.css.map */
