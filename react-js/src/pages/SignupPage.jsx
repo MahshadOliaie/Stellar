@@ -5,6 +5,7 @@ function SignupPage() {
     const Navigate = useNavigate()
     return (
         <div className="FormBg">
+            <p className="backBtn" onClick={() => Navigate('/')}>back to home</p>
             <div className="form">
                 <h1 className="form__title">sign up</h1>
                 <input type="text" className="form__username" placeholder="username" />

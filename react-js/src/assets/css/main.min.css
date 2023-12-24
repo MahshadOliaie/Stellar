@@ -1268,4 +1268,45 @@ path {
 #codeInput {
   text-align: center;
   width: 65%;
+}
+
+.backBtn {
+  position: absolute;
+  opacity: 0.5;
+  bottom: 5%;
+  cursor: pointer;
+  left: 40%;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.backBtn::after {
+  content: "";
+  width: 0;
+  height: 0.7px;
+  background-color: black;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+.backBtn:hover::after {
+  width: 100%;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+.backBtn:hover {
+  opacity: 1;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }/*# sourceMappingURL=main.min.css.map */

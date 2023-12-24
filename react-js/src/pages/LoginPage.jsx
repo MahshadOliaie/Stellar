@@ -4,6 +4,7 @@ function LoginPage() {
     const Navigate = useNavigate()
     return (
         <div className="FormBg">
+            <p className="backBtn" onClick={() => Navigate('/')}>back to home</p>
             <div className="form">
                 <h1 className="form__title">login</h1>
                 <input className="form__number" type="text" placeholder="phone number" maxLength={11} minLength={11} />

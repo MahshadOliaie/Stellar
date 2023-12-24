@@ -73,3 +73,36 @@
     text-align: center;
     width: 65%;
 }
+
+
+.backBtn{
+    position: absolute;
+    opacity: .5;
+    bottom: 5%;
+    cursor: pointer;
+    left: 40%;
+    transition: 500ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &::after{
+        content:"";
+        width: 0;
+        height: .7px;
+        background-color: black;
+        transition: 500ms;
+    }
+
+    &:hover::after{
+        width: 100%;
+        transition: 500ms;
+    }
+
+
+    &:hover{
+        opacity: 1;
+        transition: 500ms;
+    }
+}
