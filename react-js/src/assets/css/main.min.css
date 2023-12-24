@@ -1185,4 +1185,82 @@ path {
   .favoriteContainer {
     grid-template-columns: repeat(3, 33%);
   }
+}
+
+.FormBg {
+  width: 100%;
+  height: 100vh;
+  background-color: #D9D9D9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-shadow: 5px 6px 7px rgba(0, 0, 0, 0.22);
+          box-shadow: 5px 6px 7px rgba(0, 0, 0, 0.22);
+  padding: 10% 5%;
+  min-width: 70%;
+}
+.form__title {
+  margin-bottom: 40px;
+}
+.form input {
+  width: 100%;
+  background-color: #FAFAFA;
+  border: none;
+  padding: 5%;
+  -webkit-box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.form input:focus-visible {
+  outline: none;
+  background-color: #f1f1f1;
+  -webkit-box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.form__submit {
+  border: none;
+  background-color: #D9D9D9;
+  margin: 30px;
+  padding: 13px 25px;
+  -webkit-box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.form__submit:hover {
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.form__username {
+  margin-bottom: 30px;
+}
+.form__change {
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.form__change:hover {
+  opacity: 1;
+  border-bottom: 0.6px solid;
 }/*# sourceMappingURL=main.min.css.map */
