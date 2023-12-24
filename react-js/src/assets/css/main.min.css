@@ -1219,8 +1219,10 @@ path {
           justify-content: space-evenly;
   -webkit-box-shadow: 5px 6px 7px rgba(0, 0, 0, 0.22);
           box-shadow: 5px 6px 7px rgba(0, 0, 0, 0.22);
-  padding: 10% 5%;
-  min-width: 70%;
+  padding: 45px 30px;
+  width: 70%;
+  max-width: 500px;
+  max-height: 550px;
 }
 .form__title {
   margin-bottom: 40px;
@@ -1273,9 +1275,10 @@ path {
 .backBtn {
   position: absolute;
   opacity: 0.5;
+  width: 120px;
   bottom: 5%;
   cursor: pointer;
-  left: 40%;
+  left: calc(50% - 60px);
   -webkit-transition: 500ms;
   transition: 500ms;
   display: -webkit-box;

@@ -14,8 +14,10 @@
     align-items: center;
     justify-content: space-evenly;
     box-shadow: 5px 6px 7px rgb(0, 0, 0, 22%);
-    padding: 10% 5%;
-    min-width: 70%;
+    padding: 45px 30px;
+    width: 70%;
+    max-width: 500px;
+    max-height: 550px;
 
 
     &__title {
@@ -78,9 +80,10 @@
 .backBtn{
     position: absolute;
     opacity: .5;
+    width: 120px;
     bottom: 5%;
     cursor: pointer;
-    left: 40%;
+    left: calc(50% - 60px);
     transition: 500ms;
     display: flex;
     align-items: center;
