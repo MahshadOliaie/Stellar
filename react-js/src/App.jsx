@@ -8,71 +8,87 @@ import BagPage from './pages/BagPage'
 
 import React, { Suspense, lazy, useEffect } from 'react';
 import {
-  BrowserRouter ,
-  Routes,
-  Route,
-  useLocation,
-  useNavigate
+    BrowserRouter,
+    Routes,
+    Route,
+    useLocation,
+    useNavigate
 } from "react-router-dom";
 
 import { AuthProvider } from './context/AuthContext';
 import Clothes from './pages/Clothes'
 import FavoritePage from './pages/FavoritePage'
+import LoginPage from './pages/LoginPage'
+import SignupPage from './pages/SignupPage'
 
-const App=()=>{
+const App = () => {
 
-      
-      
-      function stickyHeader(){
-        if(window.scrollY>95){
-          document.querySelector(".header").classList.add("scroll")
-          document.querySelector(".header__logo img").setAttribute("src" , "./src/images/WhiteLogo.png")
-        }else{
-          document.querySelector(".header").classList.remove("scroll")
-          document.querySelector(".header__logo img").setAttribute("src" , "./src/images/StellarLogo.png")
+
+
+    function stickyHeader() {
+        if (window.scrollY > 95) {
+            document.querySelector(".header").classList.add("scroll")
+            document.querySelector(".header__logo img").setAttribute("src", "./src/images/WhiteLogo.png")
+        } else {
+            document.querySelector(".header").classList.remove("scroll")
+            document.querySelector(".header__logo img").setAttribute("src", "./src/images/StellarLogo.png")
         }
-      }
-      
-      useEffect(()=>{
-        
-          window.addEventListener("scroll", stickyHeader);
-      
-      
-      },[])
-    return(
+    }
+
+    useEffect(() => {
+
+        window.addEventListener("scroll", stickyHeader);
+
+
+    }, [])
+    return (
         <BrowserRouter>
             <AuthProvider>
                 <Routes>
-                    <Route path='/'  element={
+                    <Route path='/' element={
                         <Suspense>
-                            <MyHomePage/>
+                            <MyHomePage />
 
                         </Suspense>
-                    }/>
-                    <Route path='/clothes'  element={
+                    } />
+                    <Route path='/clothes' element={
                         <Suspense>
-                            <Clothes/>
+                            <Clothes />
 
                         </Suspense>
-                    }/>
-                    <Route path='/product/:id'  element={
+                    } />
+                    <Route path='/product/:id' element={
                         <Suspense>
-                            <ProductPage/>
+                            <ProductPage />
 
                         </Suspense>
-                    }/>
-                    <Route path='/mybag'  element={
+                    } />
+                    <Route path='/mybag' element={
                         <Suspense>
-                            <BagPage/>
+                            <BagPage />
 
                         </Suspense>
-                    }/>
-                    <Route path='/favorite'  element={
+                    } />
+                    <Route path='/favorite' element={
                         <Suspense>
-                            <FavoritePage/>
+                            <FavoritePage />
 
                         </Suspense>
-                    }/>
+                    } />
+
+                    <Route path='/login' element={
+                        <Suspense>
+                            <LoginPage />
+
+                        </Suspense>
+                    } />
+
+                    <Route path='/signUp' element={
+                        <Suspense>
+                            <SignupPage />
+
+                        </Suspense>
+                    } />
                 </Routes>
 
             </AuthProvider>
