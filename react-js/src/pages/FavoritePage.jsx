@@ -22,7 +22,7 @@ export default FavoritePage;
 function FavoriteItems() {
     let items = []
     for(let i=0 ; i<liked.length ; i++){
-        items.push(<Product isLiked="true" id={i} />)
+        items.push(<Product isLiked="true" id={liked[i]} />)
     }
     return (
         <>

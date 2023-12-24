@@ -49,9 +49,9 @@ function Clothes() {
                 })}
                
           
-                <Product />
-                <Product />
-                <Product />
+                <Product id="1"/>
+                <Product id="2"/>
+                <Product id="3"/>
             </div>
         </>
     )
