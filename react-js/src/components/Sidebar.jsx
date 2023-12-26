@@ -1,9 +1,4 @@
-import BagPage from "../pages/BagPage";
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-
-import MyHomePage from "../pages/MyHomePage";
-import FavoritePage from "../pages/FavoritePage";
 import { useNavigate } from "react-router-dom";
 
 
@@ -32,42 +27,4 @@ function closeSideBar() {
 
 
 
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-
-
-
-
-// function renderBagPage() {
-//     topFunction();
-//     ReactDOM.createRoot(document.getElementById('root')).render(
-//         <React.StrictMode>
-//             <BagPage />
-//         </React.StrictMode>,
-//     )
-// }
-
-
-
-
-
-// function renderFavoritePage(){
-//     topFunction();
-//     ReactDOM.createRoot(document.getElementById('root')).render(
-//         <React.StrictMode>
-//            <FavoritePage />
-//         </React.StrictMode>,
-//     )
-// }
-
-// function renderHomePage() {
-//     topFunction();
-//     ReactDOM.createRoot(document.getElementById('root')).render(
-//         <React.StrictMode>
-//            <MyHomePage/>
-//         </React.StrictMode>,
-//     )
-// }
 

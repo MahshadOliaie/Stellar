@@ -1,7 +1,4 @@
-import BagPage from "../pages/BagPage";
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import MyHomePage from "../pages/MyHomePage";
 import Sidebar from "./Sidebar";
 import { useNavigate } from "react-router-dom";
 function MyHeader(Props) {
@@ -26,30 +23,5 @@ function MyHeader(Props) {
 }
 export default MyHeader;
 
-
-
-// function renderBagPage() {
-//     topFunction();
-//     ReactDOM.createRoot(document.getElementById('root')).render(
-//         <React.StrictMode>
-//             <BagPage />
-//         </React.StrictMode>,
-//     )
-// }
-
-// function topFunction() {
-//     document.body.scrollTop = 0;
-//     document.documentElement.scrollTop = 0;
-// }
-
-
-// function renderHomePage() {
-//     topFunction();
-//     ReactDOM.createRoot(document.getElementById('root')).render(
-//         <React.StrictMode>
-//            <MyHomePage/>
-//         </React.StrictMode>,
-//     )
-// }
 
 

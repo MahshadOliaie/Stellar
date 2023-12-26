@@ -1,8 +1,5 @@
-import ProductPage from "../pages/ProductPage";
 import React from 'react'
-import ReactDOM from 'react-dom/client'
 import { useNavigate } from "react-router-dom";
-import serverAddress from "../utils/serverAddress";
 
 export let liked = JSON.parse(localStorage.getItem("favorite")) ||[]
 
@@ -30,7 +27,7 @@ function Product(Props) {
     //         </div>
     //     </div>
     // )
-console.log(liked)
+
     return (
         <div className="card" >
             <div className="card__image" onClick={()=>Navigate(`/product/3`)}>
@@ -53,19 +50,6 @@ export default Product;
 
 
 
-// function renderProductPage() {
-//     topFunction();
-//     ReactDOM.createRoot(document.getElementById('root')).render(
-//         <React.StrictMode>
-//             <ProductPage />
-//         </React.StrictMode>,
-//     )
-// }
-
-// function topFunction() {
-//     document.body.scrollTop = 0;
-//     document.documentElement.scrollTop = 0;
-// }
 
 
 function likeFn(id) {
