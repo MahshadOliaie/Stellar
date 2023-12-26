@@ -1312,4 +1312,19 @@ path {
   opacity: 1;
   -webkit-transition: 500ms;
   transition: 500ms;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.wrong {
+  color: red;
+  font-size: small;
+  margin: 2px;
+}
+
+.dnone {
+  display: none;
 }/*# sourceMappingURL=main.min.css.map */

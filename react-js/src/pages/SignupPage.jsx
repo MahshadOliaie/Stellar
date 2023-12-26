@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { checkNumber } from "./LoginPage";
 
 
 function SignupPage() {
@@ -9,8 +10,9 @@ function SignupPage() {
             <div className="form">
                 <h1 className="form__title">sign up</h1>
                 <input type="text" className="form__username" placeholder="username" />
-                <input className="form__number" type="text" placeholder="phone number" maxLength={11} minLength={11} />
-                <button type="submit" className="form__submit" onClick={() => Navigate('/codePage')}>send code</button>
+                <input className="form__number" onKeyUp={checkNumber} type="number" placeholder="phone number"/>
+                <p className="wrong dnone">wrong number!</p>
+                <button type="submit" className="form__submit form__submitSignup disabled" onClick={() => Navigate('/codePage')}>send code</button>
                 <p className="form__change" onClick={() => Navigate('/login')}>already have an account?</p>
             </div>
         </div>
@@ -18,3 +20,4 @@ function SignupPage() {
 }
 
 export default SignupPage;
+
