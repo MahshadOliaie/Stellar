@@ -23,7 +23,7 @@ function ProductPage() {
 
     // },[selectedSize])
     // useEffect(()=>{
-    //     setSelectedSize(product?.size[product?.size.keys()[0]])
+    //     setSelectedSize(product?.size[Object.keys(product?.size)[0]])
 
     // },[product])
     // const changeSizeEvent=(sizeKey)=>{
@@ -105,7 +105,7 @@ function ProductPage() {
     //                 <div className="options__size">
     //                     <label className="options__size__lable" htmlFor="size">size</label>
     //                     <select name="size" id="size"  onChange={(e)=>setSelectedSize(e.target.value)} >
-    //                         {product?.size.keys().map((size)=>{
+    //                         {Object.keys(product?.size).map((size)=>{
     //                             return(
     //                                 <option value={size}>{size}</option>
 

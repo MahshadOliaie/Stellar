@@ -32,7 +32,7 @@ export const getFullDetailProduct=async(id,setProduct)=>{
         if(res.data.err===false){
    
             let structuredProduct=res.data.data
-            structuredProduct['size']=[]
+            structuredProduct['size']={}
             for(let i of structuredProduct.colorsNSizes){
                 structuredProduct['size'][i.size].push(i.color)
 
