@@ -1,18 +1,40 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext, useState,useRef, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
 
-let phoneNumber = "";
+
 
 function LoginPage() {
     const Navigate = useNavigate()
+    const context=useContext(AuthContext)
+    const numberEl=useRef()
+    const [loginErr,setLoginErr]=useState({err:false})
+    const [qParams,setQParams]=useSearchParams()
+    useEffect(()=>{
+        if(context.user){
+      
+            Navigate('/')
+        }
+        if(qParams.has('errmessage')){
+
+            setLoginErr({err:true,message:qParams.get('errmessage')})
+            setQParams((prevParam)=>prevParam.delete('errmessage'))
+        }
+        
+
+    },[])
+
+
     return (
         <div className="FormBg">
             <p className="backBtn" onClick={() => Navigate('/')}>back to home</p>
             <div className="form">
                 <h1 className="form__title">login</h1>
-                <input onKeyUp={checkNumber} className="form__number" id="number" type="number" placeholder="phone number"/>
+                <input ref={numberEl} onKeyUp={checkNumber} className="form__number" id="number" type="number" placeholder="phone number"/>
                 <p className="wrong dnone">wrong number!</p>
-                <button type="submit" className="form__submit disabled" onClick={() => Navigate('/codePage')}>send code</button>
+                <p className="wrong">{loginErr.message}</p>
+
+                <button type="submit" className="form__submit disabled" onClick={() => context.sendPhoneNumber(numberEl.current.value,setLoginErr)}>send code</button>
                 <p className="form__change" onClick={() => Navigate('/signUp')}>create an account</p>
             </div>
         </div>

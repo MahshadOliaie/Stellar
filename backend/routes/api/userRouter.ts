@@ -20,39 +20,13 @@ const userRepo=dataSource.getRepository('User')
 const tfLoginRepo=dataSource.getRepository('TfLogin')
 
 
-// const storage=diskStorage({
-//     destination:(req,file,cb)=>{
-//         cb(null,'F:/zarpharo/zarpharo/backend/'+'public/profilepicture/')
-//     },
-//     filename:(req,file,cb)=>{
-//         const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)+'.'+file.mimetype.split('/')[1]
-//         cb(null,file.fieldname+uniqueSuffix)
-
-
-//     }
-// })
-// // set sizefilter later
-
-// const upload=multer({storage:storage,
-//     // add filesize filter later
-//     fileFilter: (req, file, cb) => {
-//         if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
-//             cb(null, true);
-//         } else {
-//             cb(null, false);
-//             return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
-//         }
-//     }
-// })
-
-// add delete file method later
-// upload.single('profilePicture')
 userRouter.post('/register/firststep',async(req,res)=>{
     try {
+   
         const phoneNumber=req.body.phoneNumber
         if(!check_phone(phoneNumber)){
             
-            return res.json({err:{message:"لطفا شماره را درست وارد کنید "},code:-101})
+            return res.json({err:true,message:"لطفا شماره را درست وارد کنید ",code:-101})
         }
         const lastLogin=await tfLoginRepo.findOne({
             where:{
@@ -66,7 +40,7 @@ userRouter.post('/register/firststep',async(req,res)=>{
         if(lastLogin!==null){
             const diff=new Date().getTime()-lastLogin.createdDate.getTime()
             if(diff<60000){
-                return res.json({err:null,code:100})
+                return res.json({err:false,code:100})
             }
 
             
@@ -78,7 +52,7 @@ userRouter.post('/register/firststep',async(req,res)=>{
         //sendCode api
         
         res.status(200)
-        return res.json({err:null,code:100})
+        return res.json({err:false,code:100})
    
 
     
@@ -153,7 +127,7 @@ userRouter.post('/register/secondstep',async(req,res)=>{
         const code=req.body.code
         const phoneNumber=req.body.phoneNumber
         if(!check_phone(phoneNumber)){
-            
+           
             res.status(400)
             // return res.json({err:"لطفا شماره را با فرمت"+"+98-912-XXXX124"+"وارد کنید"})
         }
@@ -167,14 +141,14 @@ userRouter.post('/register/secondstep',async(req,res)=>{
             const timeDiff=(new Date().getTime()-userTfLogin.createdDate.getTime())/1000
             console.log(timeDiff)
             if(timeDiff>60){
-                return res.json({err:{message:'مدت زمان شما به پایان رسید لطفا دوباره لاگین کنید'},code:105})
+                return res.json({err:true,message:'مدت زمان شما به پایان رسید لطفا دوباره لاگین کنید',code:105})
             }
             
         }
         if(userTfLogin.code.toString()!==code){
            
        
-            return res.json({err:{message:'کد وارد شده اشتباه است'},code:102})
+            return res.json({err:true,message:'کد وارد شده اشتباه است',code:102})
             
             
         }
@@ -201,12 +175,12 @@ userRouter.post('/register/secondstep',async(req,res)=>{
   
 
         
-        return res.json({access:userToken,err:null,code:100})
+        return res.json({access:userToken,err:false,code:100})
 
     } catch (error) {
-        console.log(error.message)
+        console.log(error)
         res.status(400)
-        return res.json({err:{message:'لطفا دوباره تلاش کنید'},code:104})
+        return res.json({err:true,message:'لطفا دوباره تلاش کنید',code:104})
         
     }
     

@@ -1,9 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import { checkNumber } from "./LoginPage";
+import { useEffect } from "react";
 
 
 function SignupPage() {
     const Navigate = useNavigate()
+    useEffect(()=>{
+        if(context.user){
+       
+            Navigate('/')
+        }
+
+    },[])
+
     return (
         <div className="FormBg">
             <p className="backBtn" onClick={() => Navigate('/')}>back to home</p>

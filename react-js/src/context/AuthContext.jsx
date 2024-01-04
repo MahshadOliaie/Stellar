@@ -5,6 +5,7 @@ import { useCookies } from 'react-cookie'
 import axios from 'axios'    
 
 import { useLocation, useNavigate } from "react-router-dom"
+import serverAddress from "../utils/serverAddress"
 const AuthContext=React.createContext()
 const AuthProvider=(props)=>{
     const navigate=useNavigate()
@@ -12,51 +13,52 @@ const AuthProvider=(props)=>{
     const [cookies,setCookie,removeCookie]=useCookies('access')
     const [registerErrM,setregisterErrM]=useState(null)
     const [access,setAccess]=useState(cookies?.access ? cookies?.access:null)
-    const [userphoneNumber,setUserPhoneNumber]=useState(null)
+    // const [userphoneNumber,setUserPhoneNumber]=useState(null)
     // error here
     const [user,setUser]=useState(cookies?.access? jwtDecode(cookies?.access):null)
     const [shoppingCartItems,setShoppingCartItems]=useState(null)
 
     const location=useLocation()
-    topFunction()
+  
     function topFunction() {
         window.scrollTo(0, 0)
       }
-      useEffect(()=>{
+    useEffect(()=>{
+    topFunction()
 
-      },[location])
+    },[location])
       
     
-    // useEffect(()=>{
+    useEffect(()=>{
         
         
-    //     // const authority=sessionStorage.getItem('Authority')
-    //     try {
-    //         // if(authority!==null){
-    //         //     // sendcookie for method
-    //         //     navigate('/transaction/verifytransaction?Authority='+authority)  
-    //         // }
-    //         setAccess(cookies?.access ? cookies?.access:null)
-    //         setUser(cookies?.access? jwtDecode(cookies?.access):null)  
-    //     } catch (error) {
-    //         removeCookie('access',{path:'/'});
-    //     }
+        // const authority=sessionStorage.getItem('Authority')
+        try {
+            // if(authority!==null){
+            //     // sendcookie for method
+            //     navigate('/transaction/verifytransaction?Authority='+authority)  
+            // }
+            setAccess(cookies?.access ? cookies?.access:null)
+            setUser(cookies?.access? jwtDecode(cookies?.access):null)  
+        } catch (error) {
+            removeCookie('access',{path:'/'});
+        }
         
   
   
       
-    // },[])
+    },[])
 
     // useEffect(async()=>{
     //     setCookie('mycat','patman')
     //     fetch()
     // },[])
-    // const userSetter=(access)=>{
-    //     setCookie('access',access,{path:'/'})
+    const userSetter=(access)=>{
+        setCookie('access',access,{path:'/'})
             
-    //     setAccess(access)
-    //     setUser(jwtDecode(access))
-    // }
+        setAccess(access)
+        setUser(jwtDecode(access))
+    }
         const getShoppingCart=async()=>{
         const res=await axios.post(serverAddress+'userapi/shoppingcart',{
             Headers:{'Content-Type':'Application/json'}
@@ -67,125 +69,131 @@ const AuthProvider=(props)=>{
             
         }
     }
-    // const sendPhoneNumber=async(phoneNumber,setLoginErr)=>{
+    const sendPhoneNumber=async(phoneNumber,setLoginErr)=>{
 
-    //     // const response=await fetch('http://localhost:8000/api/register',{
-    //     //     headers:{"Content-Type": 'application/json'},
-    //     //     method:'POST',
-    //     //     body:JSON.stringify({username:'prparsa'})
+        // const response=await fetch('http://localhost:8000/api/register',{
+        //     headers:{"Content-Type": 'application/json'},
+        //     method:'POST',
+        //     body:JSON.stringify({username:'prparsa'})
 
-    //     // })
-    //     try {  
-    //         const formData=new FormData()
-    //         // formData.append('phoneNumber',phoneNumber)
-    //         // formData.append('profilePicture',profilePicture)
-    //         const response = await axios.post(serverAddress+'userapi/register/firststep', {phoneNumber:phoneNumber.toString()} , {
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //         });
-    //         console.log('daad')
-    //         const data=response.data
+        // })
+        try {  
+
+  
+            // formData.append('phoneNumber',phoneNumber)
+            // formData.append('profilePicture',profilePicture)
+            const response = await axios.post(serverAddress+'api/user/register/firststep', {phoneNumber:phoneNumber.toString()} , {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+       
+            const data=response.data
             
             
-    //         if(response.status===200){
-    //             if(response.data.code===100){
-    //                 setUserPhoneNumber(phoneNumber)
-    //                 setregisterErrM(false)
-    //                 console.log(response.status)
-    //                 console.log(data.access)
+            if(response.status===200){
+                if(response.data.code===100){
+                 
+                    setLoginErr({err:false})
+                    navigate('/codepage?phonenumber='+phoneNumber)
 
-
-    //             }
-    //             else{
-    //                 setLoginErr({err:{message:response.data.err.message}})
+                }
+                else{
+                    console.log('hello')
+                    setLoginErr({err:true,message:response.data.message})
                     
-    //             }
-    //             // setCookie('access',data.access)
-    //             // setUser(jwtDecode(data.access))
-    //             // setAccess(data.access)
+                }
+                // setCookie('access',data.access)
+                // setUser(jwtDecode(data.access))
+                // setAccess(data.access)
  
                 
-    //             // localStorage.setItem('access',JSON.stringify(data))
+                // localStorage.setItem('access',JSON.stringify(data))
                 
                 
     
-    //         }
+            }
 
             
-    //     } catch (error) {
+        } catch (error) {
+            console.log(error.message)
            
 
        
-    //         setLoginErr({err:{message:'لطفا دوباره امتحان کنید'}})
+            setLoginErr({err:true,message:'لطفا دوباره امتحان کنید'})
                 
      
             
             
-    //     }
+        }
 
-    // }
-    // const login=async(code,setRegisterErr)=>{
-    //     try {
-    //         const response=await axios.post(serverAddress+'userapi/register/secondstep',{code:code,phoneNumber:userphoneNumber}, {
-    //             headers: {
-    //                 "Content-Type": "Application/Json",
-    //             }
+    }
+    const login=async(code,phonenumber,setRegisterErr)=>{
+        try {
+            const response=await axios.post(serverAddress+'api/user/register/secondstep',{code:code,phoneNumber:phonenumber}, {
+                headers: {
+                    "Content-Type": "Application/Json",
+                }
                 
-    //         }
+            }
     
-    //         )
+            )
             
             
-    //         console.log(response.status)
-    //         if (response.status===200){
-    //                 if(response.data.code===100){
-                     
-    //                     const access=response.data.access
-    //                     userSetter(access)
+    
+            if (response.status===200){
+                    if(response.data.code===100){
+                        console.log('hello')
+                        const access=response.data.access
+                        userSetter(access)
 
-    //                 }
-    //                 else if(response.data.code===105){
-    //                     window.location.reload()
+                    }
+                    else if(response.data.code===105){
+                        navigate('/login?errmessage='+response.data.message)
                         
                         
 
-    //                 }
-    //                 else{
-    //                     setRegisterErr({err:{message:response.data.err.message}})
+                    }
+                    else{
+                        navigate('/login?errmessage='+response.data.message)
+                      
                         
                         
-    //                 }
+                    }
        
       
-    //                 // localStorage.setItem('access',JSON.stringify(data))    
+                    // localStorage.setItem('access',JSON.stringify(data))    
         
     
-    //         }
+            }
  
             
-    //     } catch (error) {
-    //         console.log(error.message)
-    //         // window.location.reload()
+        } catch (error) {
+            console.log(error)
+            console.log(error.message)
+            // window.location.reload()
+       
+            setRegisterErr({err:true,message:'تلاش نا موفق'})
+            navigate('/login?errmessage='+error.data.message)
             
 
             
-    //     }
+        }
 
 
 
 
         
-    // }
-    // const logout=()=>{
-    //     removeCookie('access',{path:'/'});
-    //     setUserPhoneNumber(null)
-    //     setUser(null)
-    //     setAccess(null)
+    }
+    const logout=()=>{
+        removeCookie('access',{path:'/'});
+        setUserPhoneNumber(null)
+        setUser(null)
+        setAccess(null)
        
         
     
-    // } 
+    } 
 
 
 // // needed var list 
@@ -207,6 +215,8 @@ const AuthProvider=(props)=>{
             shoppingCartItems:shoppingCartItems,
             setShoppingCartItems:setShoppingCartItems,
             getShoppingCart:getShoppingCart,
+            sendPhoneNumber:sendPhoneNumber,
+            login:login
           
         }}>
 
