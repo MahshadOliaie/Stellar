@@ -1,12 +1,21 @@
 
 import ReactDOM from 'react-dom/client'
-import MyHeader from './components/MyHeader'
-import MyHomePage from './pages/MyHomePage'
+// import MyHeader from './components/MyHeader'
+// import MyHomePage from './pages/MyHomePage'
 
-import ProductPage from './pages/ProductPage'
-import BagPage from './pages/BagPage'
-
+// import ProductPage from './pages/ProductPage'
+// import BagPage from './pages/BagPage'
 import React, { Suspense, lazy, useEffect } from 'react';
+const MyHomePage=lazy(()=>import('./pages/MyHomePage'))
+const ProductPage=lazy(()=>import('./pages/ProductPage'))
+const BagPage=lazy(()=>import('./pages/BagPage'))
+import { AuthProvider } from './context/AuthContext';
+const Clothes=lazy(()=>import('./pages/Clothes'))
+const FavoritePage=lazy(()=>import('./pages/FavoritePage'))
+const LoginPage=lazy(()=>import('./pages/LoginPage'))
+const SignupPage=lazy(()=>import('./pages/SignupPage'))
+const CodeSubmitPage=lazy(()=>import('./pages/CodeSubmitPage'))
+
 import {
     BrowserRouter,
     Routes,
@@ -15,12 +24,12 @@ import {
     useNavigate
 } from "react-router-dom";
 
-import { AuthProvider } from './context/AuthContext';
-import Clothes from './pages/Clothes'
-import FavoritePage from './pages/FavoritePage'
-import LoginPage from './pages/LoginPage'
-import SignupPage from './pages/SignupPage'
-import CodeSubmitPage from './pages/CodeSubmitPage'
+
+// import Clothes from './pages/Clothes'
+// import FavoritePage from './pages/FavoritePage'
+// import LoginPage from './pages/LoginPage'
+// import SignupPage from './pages/SignupPage'
+// import CodeSubmitPage from './pages/CodeSubmitPage'
 
 const App = () => {
 

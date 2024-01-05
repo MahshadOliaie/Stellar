@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Sidebar from "./Sidebar";
 import { useNavigate } from "react-router-dom";
+import AuthContext from '../context/AuthContext';
 function MyHeader(Props) {
     const Navigate = useNavigate()
+    const context=useContext(AuthContext)
     function renderSidebar() {
         document.querySelector(".sidebar").classList.remove("dnone")
     }
     return (
         <header className={Props.headerState}>
-            <div className="header__register" onClick={() => Navigate('/login')}><p>login</p></div>
+            {context.user===null ?
+                <div className="header__register" onClick={() => Navigate('/login')}><p>login</p></div>
+                :
+                null
+            }
+           
             <div className="header__logo" onClick={() => Navigate('/')}><img src="/src/images/StellarLogo.png" alt="logo" /></div>
             <div className="header__navbar">
                 <p className="header__navbar__link" onClick={() => Navigate('/')}>home</p>

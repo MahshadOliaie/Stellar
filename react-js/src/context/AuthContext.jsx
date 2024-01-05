@@ -16,7 +16,7 @@ const AuthProvider=(props)=>{
     // const [userphoneNumber,setUserPhoneNumber]=useState(null)
     // error here
     const [user,setUser]=useState(cookies?.access? jwtDecode(cookies?.access):null)
-    const [shoppingCartItems,setShoppingCartItems]=useState(null)
+
 
     const location=useLocation()
   
@@ -40,6 +40,7 @@ const AuthProvider=(props)=>{
             // }
             setAccess(cookies?.access ? cookies?.access:null)
             setUser(cookies?.access? jwtDecode(cookies?.access):null)  
+            
         } catch (error) {
             removeCookie('access',{path:'/'});
         }
@@ -59,15 +60,16 @@ const AuthProvider=(props)=>{
         setAccess(access)
         setUser(jwtDecode(access))
     }
-        const getShoppingCart=async()=>{
-        const res=await axios.post(serverAddress+'userapi/shoppingcart',{
+    const getBag=async(setBagItems)=>{
+        const res=await axios.post(serverAddress+'api/user/bag',{
             Headers:{'Content-Type':'Application/json'}
         })
         if(res.status===200){
             console.log(res.data)
-            setShoppingCartItems(res.data.productsInCart)
+            setBagItems(res.data.productsInCart)
             
-        }
+            
+    }
     }
     const sendPhoneNumber=async(phoneNumber,setLoginErr)=>{
 
@@ -212,9 +214,8 @@ const AuthProvider=(props)=>{
         <AuthContext.Provider value={{
             
             user:user,
-            shoppingCartItems:shoppingCartItems,
-            setShoppingCartItems:setShoppingCartItems,
-            getShoppingCart:getShoppingCart,
+
+            getBag:getBag,
             sendPhoneNumber:sendPhoneNumber,
             login:login
           

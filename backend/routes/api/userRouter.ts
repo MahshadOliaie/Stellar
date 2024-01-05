@@ -293,8 +293,9 @@ userRouter.post('/register/secondstep',async(req,res)=>{
     
 // })
 
-userRouter.post('/shoppingcart',checkAuth,async(req,res)=>{
+userRouter.post('/bag',checkAuth,async(req,res)=>{
     try {
+        console.log('hhh')
         // const scRepo=dataSource.getRepository('ShoppingCart')
         const BagItems=await userRepo.findOne({
             where:{
@@ -320,7 +321,7 @@ userRouter.post('/shoppingcart',checkAuth,async(req,res)=>{
 
             
         // })
-      
+
         res.json(BagItems)
         
     } catch (error) {

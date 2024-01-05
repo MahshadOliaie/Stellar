@@ -39,7 +39,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json())
 
 app.use(express.static('public'))
-app.use(express.static('build'))
+app.use(express.static('dist'))
 app.use(cors())
 dataSource
 .initialize()
@@ -60,7 +60,7 @@ app.use('/api',apiRouter)
 app.get('/',(req,res)=>{
     
     // res.json({dadassd:"dadadas"})
-    res.sendFile(__dirname+'/build/index.html')
+    res.sendFile(__dirname+'/dist/index.html')
     
 })
 
