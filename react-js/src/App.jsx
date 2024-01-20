@@ -38,10 +38,10 @@ const App = () => {
     function stickyHeader() {
         if (window.scrollY > 95) {
             document.querySelector(".header").classList.add("scroll")
-            document.querySelector(".header__logo img").setAttribute("src", "./src/images/WhiteLogo.png")
+            document.querySelector(".header__logo img").setAttribute("src", "/public/images/WhiteLogo.png")
         } else {
             document.querySelector(".header").classList.remove("scroll")
-            document.querySelector(".header__logo img").setAttribute("src", "./src/images/StellarLogo.png")
+            document.querySelector(".header__logo img").setAttribute("src", "/public/images/StellarLogo.png")
         }
     }
 

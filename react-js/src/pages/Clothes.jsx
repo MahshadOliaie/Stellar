@@ -5,6 +5,7 @@ import MyHeader from "../components/MyHeader";
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProductsByTags } from "../api/ProductApi";
+import Products from "../Model";
 
 function Clothes() {
     const [qparams,setqparams]=useSearchParams()
@@ -43,15 +44,11 @@ function Clothes() {
             </div>
             <Title title={selectedCat}/>
             <div className="products">
-                {products.map((product)=>{
-                        <Product product={product} />
+                {Products.map((product)=>{
+                        return <Product {...product} key={product.id}/>
 
                 })}
                
-          
-                <Product id="1"/>
-                <Product id="2"/>
-                <Product id="3"/>
             </div>
         </>
     )

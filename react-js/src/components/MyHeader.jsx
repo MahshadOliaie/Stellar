@@ -16,7 +16,7 @@ function MyHeader(Props) {
                 null
             }
            
-            <div className="header__logo" onClick={() => Navigate('/')}><img src="/src/images/StellarLogo.png" alt="logo" /></div>
+            <div className="header__logo" onClick={() => Navigate('/')}><img src="/public/images/StellarLogo.png" alt="logo" /></div>
             <div className="header__navbar">
                 <p className="header__navbar__link" onClick={() => Navigate('/')}>home</p>
                 <p className="header__navbar__link">products</p>
