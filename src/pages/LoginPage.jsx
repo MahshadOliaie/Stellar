@@ -5,6 +5,7 @@ import AuthContext from "../context/AuthContext";
 
 
 function LoginPage() {
+    event.preventDefault()
     const Navigate = useNavigate()
     const context=useContext(AuthContext)
     const numberEl=useRef()
