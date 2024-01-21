@@ -645,14 +645,22 @@ path {
 .photos__main {
   padding: 6%;
   position: relative;
+  height: 700px;
+  overflow: hidden;
 }
 .photos__main img {
   width: 100%;
-  max-height: 800px;
+  max-height: 600px;
+}
+@media screen and (min-width: 1100px) {
+  .photos__main img {
+    max-height: 800px;
+  }
 }
 @media screen and (min-width: 1100px) {
   .photos__main {
     padding: 0 6%;
+    height: auto;
   }
 }
 .photos__main__dots {
@@ -692,9 +700,9 @@ path {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 20px;
   width: 100%;
   overflow: scroll;
@@ -729,20 +737,20 @@ path {
     height: 95px;
   }
 }
-.photos__picker img:not(.currentPhoto) {
+.photos__picker img:not(.current) {
   opacity: 0.7;
 }
 
-.currentPhoto {
+.current {
   opacity: 1;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
-  border-bottom: 4px solid #616161;
+  border-bottom: 4px solid #494949;
 }
 @media screen and (min-width: 700px) {
-  .currentPhoto {
+  .current {
     border: none;
-    border-left: 4px solid #616161;
+    border-left: 4px solid #494949;
   }
 }
 
@@ -891,6 +899,7 @@ path {
   text-align: center;
   font-size: 12px;
   padding: 4px 0;
+  color: black;
 }
 @media screen and (min-width: 600px) {
   .options__size select {
@@ -1004,14 +1013,6 @@ path {
   .addBtn img {
     font-size: 25px;
   }
-}
-
-.photos__picker__image:has(.current) {
-  border-bottom: 3px solid rgba(0, 0, 0, 0.709);
-}
-
-.photos__picker__image:has(.current) img {
-  opacity: 1;
 }
 
 .bag {
