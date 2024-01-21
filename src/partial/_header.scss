@@ -1,0 +1,138 @@
+.header {
+    background-color: transparent;
+    color: black;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    transition: 500ms;
+
+    &__navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        width: fit-content;
+        flex-basis: 1;
+
+        &__link {
+            padding: 5px;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            &::before{
+                content: "";
+                height: 1px;
+                width: 90%;
+                background-color: black;
+                position: absolute;
+                bottom: 5px;
+                transform: translate(-110%);
+                transition: 500ms;
+            }
+            &:hover::before{
+                transform: translate(0);
+                transition: 500ms;
+            }
+
+    
+            @media screen and (max-width : 1000px) {
+                display: none;
+            }
+
+        
+
+        }
+
+        &__bar {
+            cursor: pointer;
+            fill: black;
+
+            @media screen and (min-width : 1000px) {
+                display: none;
+            }
+
+            @media screen and (max-width : 1000px) {
+                display: block;
+                font-size: 30px;
+            }
+
+
+            @media screen and (min-width : 700px) {
+               font-size: 40px;
+            }
+        
+        }
+    }
+
+
+    &__logo {
+        flex-basis: 1;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+
+        & img{
+            width: 25%;
+            cursor: pointer;
+
+            @media screen and (min-width : 700px) {
+                width: 35%;
+            }
+        }
+    }
+
+    &__register {
+
+        & p {
+            border: .5px solid;
+            padding: 2px 13px;
+            cursor: pointer;
+            flex-basis: 1;
+            @media screen and (min-width : 700px) {
+                font-size: 18px;
+                padding: 5px 18px;
+            }
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.663);
+                color: white;
+                border-color: black;
+            }
+        }
+
+    }
+}
+
+
+
+
+.scroll{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.871);
+    transition: 500ms;
+
+    & .header__register p{
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.885);
+            color: black;
+        }
+    }
+
+    & .header__navbar__bar{
+        fill: white;
+    }
+
+    & .header__navbar__link::before{
+        background-color: white;
+    }
+
+}
