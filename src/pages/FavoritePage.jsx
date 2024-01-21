@@ -1,16 +1,19 @@
 
+import Products from "../Model";
 import MyHeader from "../components/MyHeader";
-import Product, { liked } from "../components/Product";
+import Product from "../components/Product";
 
 
 
 function FavoritePage() {
-    console.log(liked)
     return (
         <>
             <MyHeader />
             <div className="favoriteContainer">
-                {<FavoriteItems />}
+                {Products.map(obj =>{
+                    if(obj.isLiked)
+                    return <Product {...obj} key={obj.id}/>
+                })}
             </div>
 
         </>
@@ -19,15 +22,3 @@ function FavoritePage() {
 
 export default FavoritePage;
 
-
-function FavoriteItems() {
-    let items = []
-    for (let i = 0; i < liked.length; i++) {
-        items.push(<Product isLiked="true" id={liked[i]} />)
-    }
-    return (
-        <>
-            {items}
-        </>
-    )
-}
