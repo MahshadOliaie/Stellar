@@ -3,9 +3,16 @@ import { useParams } from 'react-router-dom'
 import { getFullDetailProduct } from "../api/ProductApi";
 import serverAddress from "../utils/serverAddress";
 import MyHeader from "../components/MyHeader";
+import Products from "../Model";
 
 function ProductPage() {
 
+    let id = location.pathname.replaceAll("/product/", "");
+    let product = Products.filter(item => {
+        if (item.id == id)
+            return item
+    })
+    const { images, name, price } = product[0];
     // const [product,setProduct]=useState(null)
     // const {id}=useParams()
     // const [selectedSize,setSelectedSize]=useState()
@@ -144,36 +151,43 @@ function ProductPage() {
     // </>
 
     // )
+
+
+    const [image, setImage] = useState(images[0])
+    const [dot , setDot] = useState("0")
+
+    function select(item , index) {
+        setImage(item)
+        setDot(index)
+    }
     return (
         <>
             <MyHeader />
             <div className="containerProduct">
                 <div className="photos">
                     <div className="photos__main">
-                        <img src="/src/images/jacket1.jpg" alt="" />
+                        <img src={image} alt="" />
 
                         <div className="photos__main__dots">
-                            <div className="photos__main__dots__dot currentDot" id="dotp1"></div>
-                            <div className="photos__main__dots__dot" id="dotp2"></div>
-                            <div className="photos__main__dots__dot" id="dotp3"></div>
-                            <div className="photos__main__dots__dot" id="dotp4"></div>
-                            <div className="photos__main__dots__dot" id="dotp5"></div>
+                            {images.map((item , index) =>{
+                                return  <div className={(dot == index) && "currentDot"}></div>
+                            })}
                         </div>
                     </div>
 
                     <div className="photos__picker">
-                        <img src="/src/images/jacket1.jpg" id="p1" alt="" className="photos__picker__image currentPhoto" onClick={() => showPhoto("/src/images/jacket1.jpg")} />
-                        <img src="/src/images/jacketProduct.jpg" id="p2" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/images/jacketProduct.jpg")} />
-                        <img src="/src/images/jacket2.jpg" id="p3" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/images/jacket2.jpg")} />
-                        <img src="/src/images/jacket2.jpg" id="p4" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/images/jacket2.jpg")} />
-                        <img src="/src/images/jacket2.jpg" id="p5" alt="" className="photos__picker__image" onClick={() => showPhoto("/src/images/jacket2.jpg")} />
+                        {images.map((item , index) => {
+                            return <div key={item} className="photos__picker__image" onClick={() => select(item , index)}>
+                                <img src={item} className={(item == image) && "current"} alt="" />
+                            </div>
+                        })}
                     </div>
                 </div>
 
                 <div className="about">
                     <div className="about__title">
-                        <p className="about__title__name">jeans jacket</p>
-                        <p className="about__title__price">780,000 T</p>
+                        <p className="about__title__name">{name}</p>
+                        <p className="about__title__price">{price}</p>
                     </div>
 
                     <div className="about__colorPicker">
@@ -222,16 +236,3 @@ function ProductPage() {
 
 export default ProductPage;
 
-
-
-function showPhoto(src) {
-    document.querySelector(".photos__main img").setAttribute("src", src);
-    document.querySelector(".currentPhoto").classList.remove("currentPhoto")
-    event.target.classList.add("currentPhoto")
-    checkPhoto(event.target.getAttribute("id"))
-}
-
-function checkPhoto(id) {
-    document.querySelector(".currentDot").classList.remove("currentDot")
-    document.getElementById(`dot${id}`).classList.add("currentDot")
-}

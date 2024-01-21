@@ -54,7 +54,7 @@
             }
 
 
-            &__dot {
+            & div {
                 width: 13px;
                 height: 13px;
                 margin: 0 7px;
@@ -349,4 +349,13 @@
             font-size: 25px;
         }
     }
+}
+
+
+.photos__picker__image:has(.current){
+    border-bottom: 3px solid rgba(0, 0, 0, 0.709);
+}
+
+.photos__picker__image:has(.current) img{
+    opacity: 1;
 }

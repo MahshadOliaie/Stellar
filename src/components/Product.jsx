@@ -7,7 +7,7 @@ import Products from '../Model';
 
 function Product(Props) {
 
-    const { id, image, name, price, isLiked} = Props;
+    const { id, images, name, price, isLiked} = Props;
     const [like, setLike] = useState(isLiked)
 
     const Navigate = useNavigate()
@@ -43,8 +43,8 @@ function Product(Props) {
     return (
         
         <div className="card" >
-            <div className="card__image" onClick={() => Navigate(`/product/3`)}>
-                <img src={image} alt="" />
+            <div className="card__image" onClick={() => Navigate(`/product/${id}`)}>
+                <img src={images[0]} alt="" />
             </div>
             <div className="card__about">
                 <div className="card__about__text">

@@ -17,16 +17,16 @@ function MyHeader(Props) {
 
 
     const [headerClass, setHeaderClass] = useState("header");
-    const [headerLogo, setHeaderLogo] = useState("/public/images/StellarLogo.png")
+    const [headerLogo, setHeaderLogo] = useState("/images/StellarLogo.png")
 
 
     function stickyHeader() {
         if (window.scrollY > 95) {
             setHeaderClass("header scroll")
-            setHeaderLogo("/public/images/WhiteLogo.png")
+            setHeaderLogo("/images/WhiteLogo.png")
         } else {
             setHeaderClass("header")
-            setHeaderLogo("/public/images/StellarLogo.png")
+            setHeaderLogo("/images/StellarLogo.png")
         }
     }
 

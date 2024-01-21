@@ -1,7 +1,7 @@
 let Products = JSON.parse(localStorage.getItem("Products")) || [
     {
         "id":1,
-        "image": "/public/images/jacketProduct.jpg",
+        "images":["/images/jacketProduct.jpg" , "/images/jacket1.jpg", "/images/jacket2.jpg"],
         "name": "jeans jacket",
         "price": "23$",
         "isLiked": false,
@@ -10,7 +10,7 @@ let Products = JSON.parse(localStorage.getItem("Products")) || [
     },
     {
         "id":2,
-        "image": "/public/images/hoodie.jpg",
+        "images":[ "/images/hoodie.jpg"],
         "name": "hoodie",
         "price": "15$",
         "isLiked": false,
@@ -19,7 +19,7 @@ let Products = JSON.parse(localStorage.getItem("Products")) || [
     },
     {
         "id":3,
-        "image": "/public/images/jacketProduct.jpg",
+        "images": ["/images/jacketProduct.jpg" , "/images/jacket1.jpg", "/images/jacket2.jpg"],
         "name": "jeans jacket",
         "price": "23$",
         "isLiked": false,
@@ -28,7 +28,7 @@ let Products = JSON.parse(localStorage.getItem("Products")) || [
     },
     {
         "id":4,
-        "image": "/public/images/jacketProduct.jpg",
+        "images": ["/images/jacketProduct.jpg" , "/images/jacket1.jpg", "/images/jacket2.jpg"],
         "name": "jeans jacket",
         "price": "23$",
         "isLiked": true,
@@ -37,7 +37,7 @@ let Products = JSON.parse(localStorage.getItem("Products")) || [
     },
     {
         "id":5,
-        "image": "/public/images/jacketProduct.jpg",
+        "images": ["/images/jacketProduct.jpg" , "/images/jacket1.jpg", "/images/jacket2.jpg"],
         "name": "jeans jacket",
         "price": "23$",
         "isLiked": false,
@@ -46,7 +46,7 @@ let Products = JSON.parse(localStorage.getItem("Products")) || [
     },
     {
         "id":6,
-        "image": "/public/images/jacketProduct.jpg",
+        "images": ["/images/jacketProduct.jpg" , "/images/jacket1.jpg", "/images/jacket2.jpg"],
         "name": "jeans jacket",
         "price": "23$",
         "isLiked": false,
@@ -55,7 +55,7 @@ let Products = JSON.parse(localStorage.getItem("Products")) || [
     },
     {
         "id":7,
-        "image": "/public/images/hoodie.jpg",
+        "images":[ "/images/hoodie.jpg"],
         "name": "hoodie",
         "price": "15$",
         "isLiked": true,

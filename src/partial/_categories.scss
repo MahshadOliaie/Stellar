@@ -167,7 +167,7 @@
 }
 
 #womenIn {
-    background-image: url(../../public/images/women.jpeg);
+    background-image: url(../../images/women.jpeg);
 
     @media screen and (min-width : 700px) {
         background-position-x: 100%;
@@ -176,7 +176,7 @@
 
 #menIn {
     justify-content: flex-end;
-    background-image: url(../../public/images/men.jpeg);
+    background-image: url(../../images/men.jpeg);
 
     @media screen and (min-width : 700px) {
         justify-content: center;
@@ -185,7 +185,7 @@
 }
 
 #bagsIn {
-    background-image: url(../../public/images/bag.jpeg);
+    background-image: url(../../images/bag.jpeg);
 
     @media screen and (min-width : 700px) {
         background-position-x: 100%;
@@ -193,7 +193,7 @@
 }
 
 #accessoryIn {
-    background-image: url(../../public/images/accessory.jpeg);
+    background-image: url(../../images/accessory.jpeg);
     justify-content: flex-end;
 
     @media screen and (min-width : 1100px) {
@@ -203,7 +203,7 @@
 
 
 #jacketIn{
-    background-image: url(../../public/images/jacket.jpeg);
+    background-image: url(../../images/jacket.jpeg);
     justify-content: flex-end;
 
     @media screen and (min-width : 700px) {
@@ -213,7 +213,7 @@
 
 
 #hoodiesIn{
-    background-image: url(../../public/images/hoodie.jpg);
+    background-image: url(../../images/hoodie.jpg);
 
     @media screen and (min-width : 700px) {
         background-position-x: 100%;
@@ -221,6 +221,6 @@
 }
 
 #tshirtIn{
-    background-image: url(../../public/images/tshirt.jpeg);
+    background-image: url(../../images/tshirt.jpeg);
     justify-content: flex-end;
 }

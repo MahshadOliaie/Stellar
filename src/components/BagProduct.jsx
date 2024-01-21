@@ -4,7 +4,7 @@ function BagProduct(Props) {
     return (
         <div className="bag__product">
             <div className="bag__product__image">
-                <img src="/public/images/jacketProduct.jpg" alt="product" />
+                <img src="/images/jacketProduct.jpg" alt="product" />
             </div>
             <div className="bag__product__about">
                 <h3 className="bag__product__about__title">jeans jacket</h3>
