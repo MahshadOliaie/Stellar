@@ -645,12 +645,12 @@ path {
 .photos__main {
   padding: 6%;
   position: relative;
-  height: 700px;
+  height: 670px;
   overflow: hidden;
 }
 .photos__main img {
   width: 100%;
-  max-height: 600px;
+  max-height: 590px;
 }
 @media screen and (min-width: 1100px) {
   .photos__main img {
