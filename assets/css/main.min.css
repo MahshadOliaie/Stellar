@@ -270,7 +270,7 @@ a {
 
 .category {
   width: 100%;
-  height: 18vh;
+  height: 20vh;
   overflow: hidden;
   cursor: pointer;
 }
@@ -489,7 +489,7 @@ a {
 }
 
 #hoodiesIn {
-  background-image: url(../../images/hoodie.jpg);
+  background-image: url(../../images/hoodies.jpeg);
 }
 @media screen and (min-width: 700px) {
   #hoodiesIn {
