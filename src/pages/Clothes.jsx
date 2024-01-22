@@ -44,8 +44,8 @@ function Clothes() {
             </div>
             <Title title={selectedCat} />
             <div className="products">
-                {Products.map((product) => {
-                    return <Product {...product} key={product.id} />
+                {Products.map((item) => {
+                    return <Product {...item} key={item.id} />
 
                 })}
 

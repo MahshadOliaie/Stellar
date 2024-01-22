@@ -537,7 +537,7 @@ button {
   grid-template-columns: 1fr;
   width: 100%;
   padding: 2% 6%;
-  row-gap: 30px;
+  row-gap: 50px;
 }
 @media screen and (min-width: 700px) {
   .products {
@@ -563,6 +563,7 @@ button {
   transition: 500ms;
 }
 .card__image {
+  max-height: 400px;
   width: 100%;
   overflow: hidden;
 }
@@ -582,6 +583,9 @@ button {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0 10px;
+}
+.card__about__text__name {
+  font-size: 18px;
 }
 .card__about__text p {
   margin: 5px;
