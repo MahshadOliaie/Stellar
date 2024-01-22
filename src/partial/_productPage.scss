@@ -190,11 +190,10 @@
         align-items: center;
         padding: 6%;
 
-        &__color {
+        & div{
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            background-color: rgb(84, 84, 223);
             margin: 0 7px;
 
             @media screen and (min-width : 700px) {
@@ -206,20 +205,6 @@
 
 }
 
-
-#color2 {
-    background-color: black;
-}
-
-#color3 {
-    background-color: #98D4FF;
-    outline-offset: 2px;
-    outline: 2px solid black;
-}
-
-#color4 {
-    background-color: #872D8F;
-}
 
 
 .options {
@@ -362,3 +347,9 @@
     }
 }
 
+
+
+.currentColor{
+    outline: 1.3px solid black;
+    outline-offset: 2px;
+}

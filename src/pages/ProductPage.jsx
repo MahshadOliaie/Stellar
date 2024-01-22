@@ -12,7 +12,7 @@ function ProductPage() {
         if (item.id == id)
             return item
     })
-    const { images, name, price } = product[0];
+    const { images, name, price , colors } = product[0];
     // const [product,setProduct]=useState(null)
     // const {id}=useParams()
     // const [selectedSize,setSelectedSize]=useState()
@@ -155,11 +155,17 @@ function ProductPage() {
 
     const [image, setImage] = useState(images[0])
     const [dot , setDot] = useState("0")
+    const [color, setColor] = useState(0)
 
     function select(item , index) {
         setImage(item)
         setDot(index)
     }
+
+    function handleColor(index){
+        setColor(index)
+    }
+
     return (
         <>
             <MyHeader />
@@ -191,10 +197,9 @@ function ProductPage() {
                     </div>
 
                     <div className="about__colorPicker">
-                        <div className="about__colorPicker__color" id="color1"></div>
-                        <div className="about__colorPicker__color" id="color2"></div>
-                        <div className="about__colorPicker__color" id="color3"></div>
-                        <div className="about__colorPicker__color" id="color4"></div>
+                        {colors.map((item , index) =>{
+                            return <div className={(index == color)&& "currentColor"} style={{backgroundColor: item}} onClick={() => handleColor(index)}></div>
+                        })}
                     </div>
 
                     <div className="options">
