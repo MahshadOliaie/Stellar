@@ -99,7 +99,7 @@
 
 
         & img {
-            width: 60px;
+            max-width: 80px;
             height: 90px;
 
             @media screen and (min-width : 700px) {

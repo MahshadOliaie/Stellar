@@ -94,7 +94,7 @@ let Products = JSON.parse(localStorage.getItem("Products")) || [
         "isLiked": false,
         "hasGift": true,
         "hasFreeShipping": true,
-        "colors": ["#c5c7d600", "#779dc0"]
+        "colors": ["#aeaeac", "#c3aa8a"]
 
     },
     {
