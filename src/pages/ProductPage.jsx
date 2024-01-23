@@ -185,8 +185,7 @@ function ProductPage() {
             "hasFreeShipping": hasFreeShipping
         };
         Bag.push(data);
-        console.log(Bag)
-        // localStorage.setItem("Bag" , json.stringify(Bag))
+        localStorage.setItem("Bag" , JSON.stringify(Bag))
     }
 
     return (
