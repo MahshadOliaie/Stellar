@@ -4,6 +4,7 @@ import { getFullDetailProduct } from "../api/ProductApi";
 import serverAddress from "../utils/serverAddress";
 import MyHeader from "../components/MyHeader";
 import Products from "../Model";
+import Bag from "../Bag";
 
 function ProductPage() {
 
@@ -12,7 +13,7 @@ function ProductPage() {
         if (item.id == id)
             return item
     })
-    const { images, name, price , colors } = product[0];
+    const { images, name, price, colors, hasGift, hasFreeShipping } = product[0];
     // const [product,setProduct]=useState(null)
     // const {id}=useParams()
     // const [selectedSize,setSelectedSize]=useState()
@@ -153,17 +154,39 @@ function ProductPage() {
     // )
 
 
+    const [bagBtnState, setBagBtnState] = useState({ "class": "addBtn", "content": "ADD TO BAG", "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyUlEQVR4nO3YrUpEURSG4QcVRLAojJOmDUybOuAV2r0Au8EueKLa/AmCzSRYLHoBWnaaLMhafA/stNMLZ5+z9iEiIiIiIv7XDZ5worhb/OAZxwqb4WXEPOJIYXO8jpg7HCpsgbcRM+FAYUu8j5hr7CtshY8Rc4U9ha3xOWIusauwDb5GzAV2FHaK7xFzvr05jY2K62x7JGgR0ubRqmLT4bCvO7x+Vx0+iMsOI8qiw9A47zDGz7pcrO67XHUnPHT4+RARERER4c/9AoxmkwPuIygtAAAAAElFTkSuQmCC" })
     const [image, setImage] = useState(images[0])
-    const [dot , setDot] = useState("0")
+    const [dot, setDot] = useState("0")
     const [color, setColor] = useState(0)
 
-    function select(item , index) {
+    function select(item, index) {
         setImage(item)
         setDot(index)
     }
 
-    function handleColor(index){
+    function handleColor(index) {
         setColor(index)
+    }
+
+
+    function addToBag() {
+        setBagBtnState({ "class": "added", "content": "ADDED", "src": "/images/check.png" })
+        let qty = document.getElementById("qty").value;
+        let size = document.getElementById("size").value;
+        let data = {
+            "id": id,
+            "images": images,
+            "name": name,
+            "qty": qty,
+            "size": size,
+            "price": (price * qty),
+            "color": colors[color],
+            "hasGift": hasGift,
+            "hasFreeShipping": hasFreeShipping
+        };
+        Bag.push(data);
+        console.log(Bag)
+        // localStorage.setItem("Bag" , json.stringify(Bag))
     }
 
     return (
@@ -175,15 +198,15 @@ function ProductPage() {
                         <img src={image} alt="" />
 
                         <div className="photos__main__dots">
-                            {images.map((item , index) =>{
-                                return  <div className={(dot == index) && "currentDot"}></div>
+                            {images.map((item, index) => {
+                                return <div className={(dot == index) && "currentDot"}></div>
                             })}
                         </div>
                     </div>
 
                     <div className="photos__picker">
-                        {images.map((item , index) => {
-                            return <div key={item} className="photos__picker__image" onClick={() => select(item , index)}>
+                        {images.map((item, index) => {
+                            return <div key={item} className="photos__picker__image" onClick={() => select(item, index)}>
                                 <img src={item} className={(item == image) && "current"} alt="" />
                             </div>
                         })}
@@ -193,12 +216,12 @@ function ProductPage() {
                 <div className="about">
                     <div className="about__title">
                         <p className="about__title__name">{name}</p>
-                        <p className="about__title__price">{price}</p>
+                        <p className="about__title__price">{price}$</p>
                     </div>
 
                     <div className="about__colorPicker">
-                        {colors.map((item , index) =>{
-                            return <div className={(index == color)&& "currentColor"} style={{backgroundColor: item}} onClick={() => handleColor(index)}></div>
+                        {colors.map((item, index) => {
+                            return <div className={(index == color) && "currentColor"} style={{ backgroundColor: item }} onClick={() => handleColor(index)}></div>
                         })}
                     </div>
 
@@ -223,9 +246,9 @@ function ProductPage() {
                     </div>
 
 
-                    <div className="addBtn">
-                        <p className="addBtn__text">ADD TO BAG</p>
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyUlEQVR4nO3YrUpEURSG4QcVRLAojJOmDUybOuAV2r0Au8EueKLa/AmCzSRYLHoBWnaaLMhafA/stNMLZ5+z9iEiIiIiIv7XDZ5worhb/OAZxwqb4WXEPOJIYXO8jpg7HCpsgbcRM+FAYUu8j5hr7CtshY8Rc4U9ha3xOWIusauwDb5GzAV2FHaK7xFzvr05jY2K62x7JGgR0ubRqmLT4bCvO7x+Vx0+iMsOI8qiw9A47zDGz7pcrO67XHUnPHT4+RARERER4c/9AoxmkwPuIygtAAAAAElFTkSuQmCC"></img>
+                    <div className={bagBtnState.class} onClick={addToBag}>
+                        <p className="addBtn__text">{bagBtnState.content}</p>
+                        <img src={bagBtnState.src}></img>
                     </div>
 
                 </div>

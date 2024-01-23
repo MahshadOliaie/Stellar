@@ -1008,6 +1008,32 @@ path {
   }
 }
 
+.added {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgb(50, 150, 50);
+  padding: 0 20px;
+  gap: 10px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  margin-top: 25px;
+  pointer-events: none;
+}
+.added img {
+  width: 30px;
+  margin-bottom: 10px;
+}
+
 .currentColor {
   outline: 1.3px solid black;
   outline-offset: 2px;
