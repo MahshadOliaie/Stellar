@@ -25,7 +25,7 @@ function BagPage(){
                 )
             })} */}
             {Bag.map(item =>{
-                return  <BagProduct bagItem={item}/>
+                return  <BagProduct {...item}/>
             })}
         </div>
         </>

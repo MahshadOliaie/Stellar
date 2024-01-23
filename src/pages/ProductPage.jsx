@@ -174,12 +174,12 @@ function ProductPage() {
         let qty = document.getElementById("qty").value;
         let size = document.getElementById("size").value;
         let data = {
-            "id": id,
+            "id": +id,
             "images": images,
             "name": name,
-            "qty": qty,
+            "qty": +qty,
             "size": size,
-            "price": (price * qty),
+            "price": price,
             "color": colors[color],
             "hasGift": hasGift,
             "hasFreeShipping": hasFreeShipping
