@@ -13,7 +13,7 @@ function ProductPage() {
         if (item.id == id)
             return item
     })
-    const { images, name, price, colors, hasGift, hasFreeShipping } = product[0];
+    const { images, name, price, colors, category, hasGift, hasFreeShipping } = product[0];
     // const [product,setProduct]=useState(null)
     // const {id}=useParams()
     // const [selectedSize,setSelectedSize]=useState()
@@ -177,6 +177,7 @@ function ProductPage() {
             "id": +id,
             "images": images,
             "name": name,
+            "category": category,
             "qty": +qty,
             "size": size,
             "price": price,
@@ -185,7 +186,7 @@ function ProductPage() {
             "hasFreeShipping": hasFreeShipping
         };
         Bag.push(data);
-        localStorage.setItem("Bag" , JSON.stringify(Bag))
+        localStorage.setItem("Bag", JSON.stringify(Bag))
     }
 
     return (
