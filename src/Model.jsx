@@ -25,7 +25,7 @@ const Products = JSON.parse(localStorage.getItem("Products")) || [
     {
         "id": 3,
         "images": ["/images/sweater1.jpg", "/images/sweater2.jpg"],
-        "name": "sweater",
+        "name": "sweaters",
         "category":["women"],
         "price": 15,
         "isLiked": false,
@@ -176,6 +176,42 @@ const Products = JSON.parse(localStorage.getItem("Products")) || [
         "hasGift": true,
         "hasFreeShipping": true,
         "colors": ["#e7e7e7", "#f1efe8"]
+
+    },
+    {
+        "id": 16,
+        "images": ["/images/KnittedSweaters1.jpg", "/images/KnittedSweaters2.jpg", "/images/KnittedSweaters3.jpg"],
+        "name": "knitted sweaters",
+        "category":["men"],
+        "price": 20,
+        "isLiked": false,
+        "hasGift": true,
+        "hasFreeShipping": true,
+        "colors": ["#A48F6E", "#726F65"]
+
+    },
+    {
+        "id": 17,
+        "images": ["/images/DropShoulderSweater1.jpg", "/images/DropShoulderSweater2.jpg"],
+        "name": "Drop Shoulder Sweaters",
+        "category":["men"],
+        "price": 22,
+        "isLiked": false,
+        "hasGift": true,
+        "hasFreeShipping": true,
+        "colors": ["#DFE1E2", "#3F2E29"]
+
+    },
+    {
+        "id": 18,
+        "images": ["/images/shirt1.jpg", "/images/shirt2.jpg"],
+        "name": "shirt",
+        "category":["men"],
+        "price": 13,
+        "isLiked": false,
+        "hasGift": true,
+        "hasFreeShipping": true,
+        "colors": ["#71695C", "#8593A4"]
 
     }
 ]
