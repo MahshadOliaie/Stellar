@@ -8,18 +8,20 @@ function BagProduct(Props) {
     const [newQty, setNewQty] = useState(qty)
 
     function handleQty(op) {
+        let temp;
         if (op == "plus") {
-            setNewQty((newQty + 1))
+            temp = newQty + 1
+            setNewQty(temp)
         }
         if (op == "minus" && newQty > 1) {
-            setNewQty((newQty - 2))
+            temp = newQty - 1
+            setNewQty(temp)
         }
         Bag.map(item => {
             if (item.id == id) {
-                item.qty = newQty;
+                item.qty = temp;
             }
         })
-        console.log(Bag)
         localStorage.setItem("Bag", JSON.stringify(Bag))
     }
 
