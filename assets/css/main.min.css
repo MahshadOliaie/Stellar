@@ -1283,6 +1283,9 @@ path {
   background-color: #D9D9D9;
   margin: 30px;
   padding: 13px 25px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   -webkit-box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
           box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
@@ -1362,6 +1365,25 @@ path {
   margin: 2px;
 }
 
-.dnone {
-  display: none;
+.form .notValid {
+  -webkit-box-shadow: inset 0px 2px 4px rgba(255, 0, 0, 0.5);
+          box-shadow: inset 0px 2px 4px rgba(255, 0, 0, 0.5);
+}
+.form .notValid:focus-visible {
+  -webkit-box-shadow: inset 0px 2px 4px rgba(255, 0, 0, 0.5);
+          box-shadow: inset 0px 2px 4px rgba(255, 0, 0, 0.5);
+}
+
+form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }/*# sourceMappingURL=main.min.css.map */
