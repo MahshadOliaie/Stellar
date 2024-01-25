@@ -10,6 +10,10 @@ function LoginPage() {
     const context = useContext(AuthContext)
     const numberEl = useRef()
     const [qParams, setQParams] = useSearchParams()
+    const [error, setError] = useState(false)
+    const [inputValue, setInputValue] = useState("")
+
+
     useEffect(() => {
         if (context.user) {
 
@@ -17,15 +21,14 @@ function LoginPage() {
         }
         if (qParams.has('errmessage')) {
 
-            setLoginErr({ err: true, message: qParams.get('errmessage') })
+            setError({ err: true, message: qParams.get('errmessage') })
             setQParams((prevParam) => prevParam.delete('errmessage'))
         }
 
 
     }, [])
 
-    const [error, setError] = useState(false)
-    const [inputValue, setInputValue] = useState("")
+
 
 
     function checkNumber() {
@@ -39,8 +42,6 @@ function LoginPage() {
 
         if (value.length == 0)
             setError(false)
-
-
 
     }
 
