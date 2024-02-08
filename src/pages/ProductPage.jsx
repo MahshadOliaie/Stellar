@@ -5,6 +5,7 @@ import serverAddress from "../utils/serverAddress";
 import MyHeader from "../components/MyHeader";
 import Products from "../Model";
 import Bag from "../Bag";
+import ImagePicker from "../components/ImagePicker";
 
 function ProductPage() {
 
@@ -206,9 +207,7 @@ function ProductPage() {
 
                     <div className="photos__picker">
                         {images.map((item, index) => {
-                            return <div key={item} className="photos__picker__image" onClick={() => select(item, index)}>
-                                <img src={item} className={(item == image) && "current"} alt="" />
-                            </div>
+                            return <ImagePicker onClick={select} item={item} image={image} index={index}/>
                         })}
                     </div>
                 </div>
