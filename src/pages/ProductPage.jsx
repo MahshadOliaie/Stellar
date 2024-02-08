@@ -6,6 +6,8 @@ import MyHeader from "../components/MyHeader";
 import Products from "../Model";
 import Bag from "../Bag";
 import ImagePicker from "../components/ImagePicker";
+import SizeSelector from "../components/SizeSelector";
+import QtySelector from "../components/QtySelector";
 
 function ProductPage() {
 
@@ -159,6 +161,8 @@ function ProductPage() {
     const [image, setImage] = useState(images[0])
     const [dot, setDot] = useState("0")
     const [color, setColor] = useState(0)
+    const [size , setSize] = useState("XS")
+    const [qty , setQty] = useState("1")
 
     function select(item, index) {
         setImage(item)
@@ -170,10 +174,21 @@ function ProductPage() {
     }
 
 
+    function changeSize(){
+        let size = event.target.value
+        setSize(size)
+    }
+
+    function changeQty(){
+        let qty = event.target.value
+        setQty(qty)
+
+    }
+
+
     function addToBag() {
         setBagBtnState({ "class": "added", "content": "ADDED", "src": "/images/check.png" })
         let qty = document.getElementById("qty").value;
-        let size = document.getElementById("size").value;
         let data = {
             "id": +id,
             "images": images,
@@ -200,14 +215,14 @@ function ProductPage() {
 
                         <div className="photos__main__dots">
                             {images.map((item, index) => {
-                                return <div className={(dot == index) && "currentDot"}></div>
+                                return <div key={index} className={(dot == index) && "currentDot"}></div>
                             })}
                         </div>
                     </div>
 
                     <div className="photos__picker">
                         {images.map((item, index) => {
-                            return <ImagePicker onClick={select} item={item} image={image} index={index}/>
+                            return <ImagePicker key={index} onClick={select} item={item} image={image} index={index}/>
                         })}
                     </div>
                 </div>
@@ -220,27 +235,20 @@ function ProductPage() {
 
                     <div className="about__colorPicker">
                         {colors.map((item, index) => {
-                            return <div className={(index == color) && "currentColor"} style={{ backgroundColor: item }} onClick={() => handleColor(index)}></div>
+                            return <div key={index} className={(index == color) && "currentColor"} style={{ backgroundColor: item }} onClick={() => handleColor(index)}></div>
                         })}
                     </div>
 
                     <div className="options">
                         <div className="options__size">
                             <label className="options__size__lable" htmlFor="size">size</label>
-                            <select name="size" id="size">
-                                <option value="XS">XS</option>
-                                <option value="S">S</option>
-                                <option value="M">M</option>
-                                <option value="L">L</option>
-                                <option value="XL">XL</option>
-                                <option value="XXL">XXL</option>
-                            </select>
+                            <SizeSelector onChange={changeSize}/>
                             <a href="#" className="sizeGuide">Size Guide</a>
                         </div>
 
                         <div className="options__qty">
                             <label className="options__qty__lable" htmlFor="qty">Qty</label>
-                            <input className="options__qty__input" type="number" id="qty" name="qty" defaultValue={1} min={1} contentEditable />
+                            <QtySelector onChange={changeQty} Qty={qty}/>
                         </div>
                     </div>
 
